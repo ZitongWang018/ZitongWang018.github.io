@@ -7,7 +7,7 @@
 
 # Site Settings
 title                    : "Zitong Wang"
-description              : 
+description              : "Hi"
 repository               : "ZitongWang018/ZitongWang018.github.io"
 google_scholar_stats_use_cdn : true
 
@@ -27,7 +27,7 @@ author:
   location         : "Zhuhai, China"
   employer         :
   pubmed           : 
-  googlescholar    : ""
+  googlescholar    : 
   email            : "wangzt28@mail2.sysu.edu.cn"
   researchgate     :  
   uri              :
@@ -37,7 +37,7 @@ author:
   flickr           :
   facebook         :
   foursquare       :
-  github           : # e.g., "ZitongWang018"
+  github           : "ZitongWang018"
   google_plus      :
   keybase          :
   instagram        :
