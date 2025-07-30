@@ -7,7 +7,7 @@ redirect_from:
   - /about/
   - /about.html
 ---
-Hello, I’m Zitong Wang (Chinese: 汪子桐), an undergraduate student at the School of International Finance, Sun Yat-sen University, working under the supervision of Professor Weibin Wu. 
+Hello, I’m Zitong Wang (Chinese: 汪子桐), an undergraduate student at the School of International Finance, Sun Yat-sen University, supervised by Weibin Wu. 
 
 Currently, my research interests span (discrete) diffusion models, multimodal representation learning and alignment, and related areas.
 
