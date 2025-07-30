@@ -15,7 +15,7 @@ I'm always open to discussions and collaborations in these fields. Feel free to 
 
 
 # 🔥 News
-* 1 paper accepted by ACMMM
+* 1 paper accepted by ACMMM, [report](https://mp.weixin.qq.com/s/7ZO4-Uf1KcqZDkfK3DRjqA)
 
 
 # 📝 Publications 
