@@ -15,15 +15,17 @@ I'm always open to discussions and collaborations in these fields. Feel free to 
 
 
 # 🔥 News
-
+* 1 paper accepted by ACMMM
 
 
 # 📝 Publications 
 ***Detecting Violations of Physical Common Sense in Images: A Challenge Dataset and Effective Model***   
-  Weibin Wu, <u>**Zitong Wang**<u>, Zhengjie Luo, Wenqing Chen, Zibin Zheng, *ACMMM 2025* (CCF-A)
+  Weibin Wu, ***Zitong Wang***, Zhengjie Luo, Wenqing Chen, Zibin Zheng, *ACMMM 2025* (CCF-A)
 
 # 🎖 Honors and Awards
-- *2024.10* National Scholarship (1%)
+- National Scholarship (1%)
+- Sun Yat-sen University Outstanding Student First Prize Scholarship (5%)
+- National Second Prize in 2024 China Undergraduate Mathematical Contest in Modeling
 
 # 📖 Educations
 - *2023.06 - present*, Sun Yat-sen University, International School of Business and Finance
