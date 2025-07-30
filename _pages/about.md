@@ -19,8 +19,7 @@ I'm always open to discussions and collaborations in these fields. Feel free to 
 
 
 # 📝 Publications 
-***Detecting Violations of Physical Common Sense in Images: A Challenge Dataset and Effective Model*** 
-
+***Detecting Violations of Physical Common Sense in Images: A Challenge Dataset and Effective Model***   
   Weibin Wu, **<u>Zitong Wang<u>**, Zhengjie Luo, Wenqing Chen, Zibin Zheng, *ACMMM 2025* (CCF-A)
 
 # 🎖 Honors and Awards
