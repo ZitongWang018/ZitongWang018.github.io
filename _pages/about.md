@@ -13,28 +13,26 @@ I'm Zitong Wang, an undergraduate student at [Sun Yat-sen University](https://ww
 
 ### Publication
 * Detecting Violations of Physical Common Sense in Images: A Challenge Dataset and Effective Model  
-_ACM Multimedia 2025 [CCF-A]_ [[pdf](https://dl.acm.org/doi/pdf/10.1145/3746027.3755124) [examples](https://dl.acm.org/doi/abs/10.1145/3746027.3755124)  ]  
+_ACM Multimedia 2025 [CCF-A]_ [[pdf](https://dl.acm.org/doi/pdf/10.1145/3746027.3755124) [examples](https://github.com/ZitongWang018/PhyVIB)  ]  
 Weibin Wu, **<u>Zitong Wang</u>**, Zhengjie Luo, Wenqing Chen, Zibin Zheng.
 
 We propose Fourier Transformer, a simple yet effective approach by layer-wise progressively removing sequence redundancies in hidden states using the ready-made Fast Fourier Transform (FFT) operator to perform Discrete Cosine Transformation (DCT). Fourier Transformer is able to significantly reduce computational costs while retaining the ability to inherit from various large pretrained models. SOTA performances among all transformer-based models on the LRA benchmark with significant improvement in both speed and space. For generative seq-to-seq tasks including CNN/DailyMail and ELI5, by inheriting the BART weights our model outperforms the standard BART and other efficient models.
 
 * Delta-K: Boosting Multi-Instance Generation via Cross-Attention Augmentation  
-under review
+under review  
+**<u>Zitong Wang</u>**, Zijun Shen, Zhengjie Luo, Zibin Zheng, Weibin Wu
 
 
-
-Selected Awards and Honors
+### Selected Awards and Honors
 ======
-- \[Sep,2025\]: National Scholarship (Top 0.2% nationwide)
-- \[Sep,2025\]: First Class Academic Scholarship (top 5% in Sun Yat-sen University)
-- \[Sep,2024\]: National Scholarship (Top 0.2% nationwide)
-- \[Sep,2024\]: First Class Academic Scholarship (top 5% in Sun Yat-sen University)
-- \[Nov,2019\]: First Prize in the CSP-J/S
-- \[Nov,2018\]: First Prize in the National Olympiad in Informatics in Provinces
+- National Scholarship (Top 0.2% nationwide)
+- First Class Academic Scholarship (top 5% in Sun Yat-sen University)
+- National Second Award in the Contemporary Undergraduate Mathematical Contest in Modeling (CUMCM)
+- Meritorious Winner in COMAP's Mathematical Contest in Modeling
 
 Personal Interests
 ======
-In my free time, I enjoy basketball 🏀, soccer ⚽, reading 📚, photography 📸 and comedy 🤣. Driven by an insatiable curiosity, I'm always eager to explore this vast world 🌍 and can't wait to share adventures and stories with you! 🥳
+I love cooking for great food🥩, listening jazz music🎵 and discussing the future tech world🏙️ with others. I also have a strong interest in quantitative trading and investing🪙. Feel free to reach out and chat with me about any of these!
 
 <div style="width: 100%; max-width: 100%; margin-top: 2em; overflow: hidden;">
   <script type="text/javascript" id="mapmyvisitors" src="//mapmyvisitors.com/map.js?d=JHwSe0hpWslgMZ3XDNF2Scw8_vYLRfXvMykkTfRYY48&cl=ffffff&w=a"></script>
