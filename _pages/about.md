@@ -33,7 +33,7 @@ Selected Awards and Honors
 
 Personal Interests
 ======
-I love cooking for great food🥩, listening jazz music🎵 and discussing the future tech world🏙️ with others. I also have a strong interest in quantitative trading and investing🪙. Feel free to reach out and chat with me about any of these!
+I love cooking great food🥩, listening to jazz music🎵 and discussing the future tech world🏙️ with others. I also have a strong interest in quantitative trading and investing🪙. Feel free to reach out and chat with me about any of these!
 
 <div style="width: 100%; max-width: 100%; margin-top: 2em; overflow: hidden;">
   <script type="text/javascript" id="mapmyvisitors" src="//mapmyvisitors.com/map.js?d=JHwSe0hpWslgMZ3XDNF2Scw8_vYLRfXvMykkTfRYY48&cl=ffffff&w=a"></script>
