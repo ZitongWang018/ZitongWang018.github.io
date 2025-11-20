@@ -12,11 +12,33 @@ I'm Zitong Wang, an undergraduate student at [Sun Yat-sen University](https://ww
 
 
 ### Publication
-| <img src="你的图片链接" alt="Fourier Transformer 架构图" style="width:300px;"> | Fourier Transformer: Fast Long Range Modeling by Removing Sequence Redundancy with FFT Operator<br><br>Ziwei He, Meng Yang, Minwei Feng, Jingcheng Yin, Xinbing Wang, Jingwen Leng, Zhouhan Lin#<br>ACL 2023 (Findings) | [pdf](你的pdf链接) | [codes](你的代码链接)<br><br>We propose Fourier Transformer, a simple yet effective approach by layer-wise progressively removing sequence redundancies in hidden states using the ready-made Fast Fourier Transform (FFT) operator to perform Discrete Cosine Transformation (DCT). Fourier Transformer is able to significantly reduce computational costs while retaining the ability to inherit from various large pretrained models. SOTA performances among all transformer-based models on the LRA benchmark with significant improvement in both speed and space. For generative seq-to-seq tasks including CNN/DailyMail and ELI5, by inheriting the BART weights our model outperforms the standard BART and other efficient models. |
-| :----------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+<!-- 开始一条论文 -->
+<div style="margin-bottom: 30px;">
+    <!-- 1. 论文标题 -->
+    <div style="font-weight: bold; font-size: 1.1rem; color: #000;">
+        Fourier Transformer: Fast Long Range Modeling by Removing Sequence Redundancy with FFT Operator
+    </div>
 
-1. Detecting Violations of Physical Common Sense in Images: A Challenge Dataset and Effective Model
- Weibin Wu, **Zitong Wang**, Zhengjie Luo, Wenqing Chen, Zibin Zheng
+    <!-- 2. 作者列表 (可以用 <strong> 把你的名字加粗) -->
+    <div style="color: #666; margin: 5px 0;">
+        Ziwei He, Meng Yang, Minwei Feng, Jingcheng Yin, Xinbing Wang, Jingwen Leng, <strong>Zhouhan Lin#</strong>
+    </div>
+
+    <!-- 3. 会议/期刊 + 链接 -->
+    <div style="font-style: italic; margin-bottom: 8px;">
+        ACL 2023 (Findings) 
+        <span style="font-style: normal; margin-left: 10px;">
+            [<a href="https://dl.acm.org/doi/abs/10.1145/3746027.3755124">PDF</a>] 
+            [<a href="https://dl.acm.org/doi/abs/10.1145/3746027.3755124">Code</a>]
+        </span>
+    </div>
+
+    <!-- 4. 摘要内容 -->
+    <div style="text-align: justify; font-size: 0.95rem; line-height: 1.5;">
+        We propose Fourier Transformer, a simple yet effective approach by layer-wise progressively removing sequence redundancies in hidden states using the ready-made Fast Fourier Transform (FFT) operator... (这里放入剩下的英文摘要)
+    </div>
+</div>
+<!-- 结束一条论文 -->
 
 - Decomposed Object Manipulation via Dual-Actor Policy
 
