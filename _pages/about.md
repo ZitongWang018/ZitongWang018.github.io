@@ -9,7 +9,7 @@ redirect_from:
 
 About me
 ======
-Hi there👋,I'm Shengbang Liu🧑‍🚀, an undergraduate student in the School of [Computer Science and Engineering](https://cse.sysu.edu.cn/) at [Sun Yat-sen University](https://www.sysu.edu.cn/)🎓. I am currently interning at the [HMI Lab](https://pku-hmi-lab.github.io/HMI-Web/research.html) and Simple Robots, supervised by Prof. [Shanghang Zhang](https://www.shanghangzhang.com/). During my undergraduate studies, I am also fortunate to be mentored by Prof. [Weishi Zheng](https://isee-ai.cn/~zhwshi/) in the [Intelligence Science and System Lab (iSEE)](https://isee-ai.cn/#/home)🌟. My research interests mainly include Embodied AI🤖,Multimodal Large Models🧠 and Computer Vision👀.
+GOOGOGOOGO Hi there👋,I'm Shengbang Liu🧑‍🚀, an undergraduate student in the School of [Computer Science and Engineering](https://cse.sysu.edu.cn/) at [Sun Yat-sen University](https://www.sysu.edu.cn/)🎓. I am currently interning at the [HMI Lab](https://pku-hmi-lab.github.io/HMI-Web/research.html) and Simple Robots, supervised by Prof. [Shanghang Zhang](https://www.shanghangzhang.com/). During my undergraduate studies, I am also fortunate to be mentored by Prof. [Weishi Zheng](https://isee-ai.cn/~zhwshi/) in the [Intelligence Science and System Lab (iSEE)](https://isee-ai.cn/#/home)🌟. My research interests mainly include Embodied AI🤖,Multimodal Large Models🧠 and Computer Vision👀.
 
 My passion lies in the exploring🤩, the creating💡, and the exhilarating feeling of what's next🚀!
 
