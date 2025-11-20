@@ -14,13 +14,12 @@ I'm Zitong Wang, an undergraduate student at [Sun Yat-sen University](https://ww
 ### Publication
 ### Fourier Transformer: Fast Long Range Modeling by Removing Sequence Redundancy with FFT Operator
 
-Ziwei He, Meng Yang, Minwei Feng, Jingcheng Yin, Xinbing Wang, Jingwen Leng, Zhouhan Lin#
-
+Fourier Transformer: Fast Long Range Modeling by Removing Sequence Redundancy with FFT Operator  
+Ziwei He, Meng Yang, Minwei Feng, Jingcheng Yin, Xinbing Wang, Jingwen Leng, Zhouhan Lin [pdf](https://dl.acm.org/doi/abs/10.1145/3746027.3755124) [code](https://dl.acm.org/doi/abs/10.1145/3746027.3755124)  
 ACL 2023 (Findings)
 
-We propose Fourier Transformer, a simple yet effective approach by layer-wise progressively removing sequence redundancies in hidden states using the ready-made Fast Fourier Transform (FFT) operator to perform Discrete Cosine Transformation (DCT). Fourier Transformer is able to significantly reduce computational costs while retaining the ability to inherit from various large pretrained models. SOTA performances among all transformer-based models on the LRA benchmark with significant improvement in both speed and space. For generative seq-to-seq tasks including CNN/DailyMail and EL15, by inheriting the BART weights our model outperforms the standard BART and other efficient models.
+We propose Fourier Transformer, a simple yet effective approach by layer-wise progressively removing sequence redundancies in hidden states using the ready-made Fast Fourier Transform (FFT) operator to perform Discrete Cosine Transformation (DCT). Fourier Transformer is able to significantly reduce computational costs while retaining the ability to inherit from various large pretrained models. SOTA performances among all transformer-based models on the LRA benchmark with significant improvement in both speed and space. For generative seq-to-seq tasks including CNN/DailyMail and ELI5, by inheriting the BART weights our model outperforms the standard BART and other efficient models.
 
-[pdf](https://dl.acm.org/doi/abs/10.1145/3746027.3755124) | [codes](https://dl.acm.org/doi/abs/10.1145/3746027.3755124)
 
 
 - Decomposed Object Manipulation via Dual-Actor Policy
