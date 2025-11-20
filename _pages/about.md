@@ -13,8 +13,8 @@ I'm Zitong Wang, an undergraduate student at [Sun Yat-sen University](https://ww
 
 ### Publication
 1. **Detecting Violations of Physical Common Sense in Images: A Challenge Dataset and Effective Model**  
-_ACM Multimedia 2025 [CCF-A]_  
-Weibin Wu, <u>**Zitong Wang**</u>, Zhengjie Luo, Wenqing Chen, Zibin Zheng. [pdf](https://dl.acm.org/doi/abs/10.1145/3746027.3755124) [code](https://dl.acm.org/doi/abs/10.1145/3746027.3755124)  
+_ACM Multimedia 2025 [CCF-A]_  [pdf](https://dl.acm.org/doi/abs/10.1145/3746027.3755124) [code](https://dl.acm.org/doi/abs/10.1145/3746027.3755124)    
+_Weibin Wu, <u>**Zitong Wang**</u>, Zhengjie Luo, Wenqing Chen, Zibin Zheng._
 
 We propose Fourier Transformer, a simple yet effective approach by layer-wise progressively removing sequence redundancies in hidden states using the ready-made Fast Fourier Transform (FFT) operator to perform Discrete Cosine Transformation (DCT). Fourier Transformer is able to significantly reduce computational costs while retaining the ability to inherit from various large pretrained models. SOTA performances among all transformer-based models on the LRA benchmark with significant improvement in both speed and space. For generative seq-to-seq tasks including CNN/DailyMail and ELI5, by inheriting the BART weights our model outperforms the standard BART and other efficient models.
 
