@@ -8,13 +8,13 @@
 
 # Basic Site Settings
 locale                   : "en-US"
-title                    : "Shengbang Liu"
+title                    : "Zitong Wang"
 title_separator          : "-"
-name                     : &name "Shengbang Liu"
+name                     : &name "Zitong Wang"
 # description              : &description "To see the world,things dangerous to come to,to see behind walls,draw closer,to find each other and to feel.That is the meaning of life."
-url                      : https://liushb9.github.io # the base hostname & protocol for your site e.g. "https://[your GitHub username].github.io"
+url                      : https://ZitongWang018.github.io # the base hostname & protocol for your site e.g. "https://[your GitHub username].github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
-repository               : "liushb9/liushb9.github.io"
+repository               : "ZitongWang018/ZitongWang018.github.io"
 
 # Site Author - The following control what appear as part of the author content on the side bar.
 #               If a field is blank the icon and link will not appear, otherwise it will be shown.
@@ -22,7 +22,7 @@ repository               : "liushb9/liushb9.github.io"
 author:
   # Biographic information
   avatar           : "profile1.png"
-  name             : "Shengbang Liu | 刘盛邦"
+  name             : "Zitong Wang"
   # pronouns         : "he/him"  
   bio              : "I have loved the stars too fondly to be fearful of the night"
   location         : "Beijing, China"
