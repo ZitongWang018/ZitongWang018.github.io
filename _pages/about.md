@@ -12,6 +12,9 @@ I'm Zitong Wang, an undergraduate student at [Sun Yat-sen University](https://ww
 
 
 ### Publication
+| <img src="你的图片链接" alt="Fourier Transformer 架构图" style="width:300px;"> | Fourier Transformer: Fast Long Range Modeling by Removing Sequence Redundancy with FFT Operator<br><br>Ziwei He, Meng Yang, Minwei Feng, Jingcheng Yin, Xinbing Wang, Jingwen Leng, Zhouhan Lin#<br>ACL 2023 (Findings) | [pdf](你的pdf链接) | [codes](你的代码链接)<br><br>We propose Fourier Transformer, a simple yet effective approach by layer-wise progressively removing sequence redundancies in hidden states using the ready-made Fast Fourier Transform (FFT) operator to perform Discrete Cosine Transformation (DCT). Fourier Transformer is able to significantly reduce computational costs while retaining the ability to inherit from various large pretrained models. SOTA performances among all transformer-based models on the LRA benchmark with significant improvement in both speed and space. For generative seq-to-seq tasks including CNN/DailyMail and ELI5, by inheriting the BART weights our model outperforms the standard BART and other efficient models. |
+| :----------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+
 1. Detecting Violations of Physical Common Sense in Images: A Challenge Dataset and Effective Model
  Weibin Wu, **Zitong Wang**, Zhengjie Luo, Wenqing Chen, Zibin Zheng
 
