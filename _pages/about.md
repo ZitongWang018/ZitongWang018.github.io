@@ -12,9 +12,8 @@ I'm Zitong Wang, an undergraduate student at [Sun Yat-sen University](https://ww
 
 
 ### Publication
-- Detecting Violations of Physical Common Sense in Images: A Challenge Dataset and Effective Model
-
-Weibin Wu, **Zitong Wang**, Zhengjie Luo, Wenqing Chen, Zibin Zheng
+1. Detecting Violations of Physical Common Sense in Images: A Challenge Dataset and Effective Model
+ Weibin Wu, **Zitong Wang**, Zhengjie Luo, Wenqing Chen, Zibin Zheng
 
 - Decomposed Object Manipulation via Dual-Actor Policy
 
