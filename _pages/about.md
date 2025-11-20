@@ -12,7 +12,7 @@ I'm Zitong Wang, an undergraduate student at [Sun Yat-sen University](https://ww
 
 
 ### Publication
-1.**Detecting Violations of Physical Common Sense in Images: A Challenge Dataset and Effective Model**  
+* Detecting Violations of Physical Common Sense in Images: A Challenge Dataset and Effective Model
 _ACM Multimedia 2025 [CCF-A]_ [[pdf]([https://dl.acm.org/doi/abs/10.1145/3746027.3755124](https://dl.acm.org/doi/pdf/10.1145/3746027.3755124)) [examples]([https://dl.acm.org/doi/abs/10.1145/3746027.3755124](https://github.com/ZitongWang018/PhyVIB))  ]  
 Weibin Wu, **<u>Zitong Wang</u>**, Zhengjie Luo, Wenqing Chen, Zibin Zheng.
 
