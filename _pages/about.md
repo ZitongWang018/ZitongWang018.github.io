@@ -26,10 +26,10 @@ _under review_
 
 Selected Awards and Honors
 ======
-1.National Scholarship (Top 0.2% nationwide)  
-2.First Class Academic Scholarship (top 5% in Sun Yat-sen University)  
-3.National Second Award in the Contemporary Undergraduate Mathematical Contest in Modeling (CUMCM)  
-4.Meritorious Winner in COMAP's Mathematical Contest in Modeling  
+* National Scholarship (Top 0.2% nationwide)
+* First Class Academic Scholarship (top 5% in Sun Yat-sen University)
+* National Second Award in the Contemporary Undergraduate Mathematical Contest in Modeling (CUMCM)
+* Meritorious Winner in COMAP's Mathematical Contest in Modeling  
 
 Personal Interests
 ======
