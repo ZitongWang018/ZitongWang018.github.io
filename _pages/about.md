@@ -11,7 +11,7 @@ About me
 ======
 I'm Zitong Wang, an undergraduate student at [Sun Yat-sen University](https://www.sysu.edu.cn/). I am currently interning at the [LUMIA Lab](https://github.com/LUMIA-Group), supervised by Prof. [Zhouhan Lin](https://hantek.github.io/). During my undergraduate studies, I am also mentored by Prof. [Weibin Wu](https://sse.sysu.edu.cn/teacher/249) . My research interests lies on foundamental language models, nlp and diffusion models. 
 
-Also, I have a strong interest in Diffusion Language Models and Self-Supervised Learning , and I am convinced that both will have a more profound impact in the years ahead.
+Also, I have a strong interest in <u>the Structure of Language Model and Self-Supervised Learning</u> , and I believe Transformer is not far enough for AGI.
 
 Publication
 ======
@@ -24,21 +24,21 @@ _Submitted to ECCV 2026_
 **<u>Zitong Wang</u>**, Zijun Shen, Zhengjie Luo, Zibin Zheng, Weibin Wu  
 
 * Every Step a Thought: Implicit Visual Reasoning in Diffusion Language Models       
-_Submitted to ICML 2026_
+_Submitted to ICML 2026_  
 **<u>Zitong Wang</u>**, Haohao Xu, Zijun Shen, Weibin Wu, Zibin Zheng  
 
 * AdaPonderLM: Gated Pondering Language Models with Token-Wise Adaptive Depth       
-_Submitted to ICML 2026_  
-Shixiang Song, He Li, Zitong Wang, Boyi Zeng, Feichen Song, Yixuan Wang, Ziwei He, Zhouhan Lin  
+_Submitted to ICML 2026_    
+Shixiang Song, He Li, **<u>Zitong Wang</u>**, Boyi Zeng, Feichen Song, Yixuan Wang, Ziwei He, Zhouhan Lin  
 
 
 * PonderLM-2: Pretraining LLM with Latent Thoughts in Continuous Space                       
-_Submitted to ICML 2026_  
-Boyi Zeng, He Li, Shixiang Song, Yixuan Wang, Zitong Wang, Ziwei He, Xinbing Wang, Zhouhan Lin
+_Submitted to ICML 2026_    
+Boyi Zeng, He Li, Shixiang Song, Yixuan Wang, **<u>Zitong Wang</u>**, Ziwei He, Xinbing Wang, Zhouhan Lin
 
 * Pretraining with Token-Level Adaptive Latent Chain-of-Thought   	                        
-_Submitted to ICML 2026_  
-Boyi Zeng, Yiqin Hao, He Li, Shixiang Song, Feichen Song, Zitong Wang, Siyuan Huang, Yi Xu, Ziwei He, Xinbing Wang, Zhouhan Lin
+_Submitted to ICML 2026_    
+Boyi Zeng, Yiqin Hao, He Li, Shixiang Song, Feichen Song, **<u>Zitong Wang</u>**, Siyuan Huang, Yi Xu, Ziwei He, Xinbing Wang, Zhouhan Lin
 
 
 Selected Awards and Honors
