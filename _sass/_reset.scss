@@ -8,10 +8,10 @@ html {
   /* apply a natural box layout model to all elements */
   box-sizing: border-box;
   background-color: $background-color;
-  font-size: 16px;
+  font-size: 14px; /* 整体字号：原 16px，已调小 */
 
   @include breakpoint($medium) {
-    font-size: 18px;
+    font-size: 15px; /* 中屏：原 18px */
   }
 
   -webkit-text-size-adjust: 100%;

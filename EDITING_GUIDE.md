@@ -45,7 +45,29 @@
 
 ---
 
-## 5. Podcast 改为 Blog（英文）及图文支持
+## 5. 整体字号与支持的字体
+
+- **整体字号**：根字号在 **`_sass/_reset.scss`** 的 `html { font-size: ... }`。已由 16px 改为 **14px**（中屏 15px）。改小该数值可再缩小全站文字，改大则放大。
+- **支持的字体（font-family）**：在 **`_sass/_variables.scss`** 的 Typography 区域：
+  - **实际用于页面的三项**（改这三项即可换全站字体）：
+    - `$global-font-family`：正文
+    - `$header-font-family`：标题
+    - `$caption-font-family`：图注/说明
+  - **可用的字体变量**（可把上面三项设为其中任一变量名，如 `$global-font-family: $sans-serif;`）：
+    - `$serif`：Times New Roman, Times, serif
+    - `$sans-serif`：系统无衬线（San Francisco / Roboto / Segoe UI / Helvetica Neue / Arial 等）
+    - `$monospace`：Monaco, Consolas, Lucida Console（代码）
+    - `$helvetica`：Helvetica, Arial
+    - `$georgia`：Georgia, serif
+    - `$times`：Times New Roman, Times, serif
+    - `$bodoni`：Bodoni MT, serif
+    - `$calisto`：Calisto MT, serif
+    - `$garamond`：Garamond, serif
+  - 若要用其他字体，在 variables 里新增一行（如 `$my-font: "Your Font", sans-serif;`），再把 `$global-font-family` 或 `$header-font-family` 设为 `$my-font` 即可。
+
+---
+
+## 6. Podcast 改为 Blog（英文）及图文支持
 
 - **导航**：顶栏的 “Podcast” 已改为 **“Blog”**，链接为 **`/blog/`**。旧链接 **`/podcast/`** 会自动跳转到 **`/blog/`**。
 - **博客列表**：**`/blog/`** 页面会列出 **`_posts/`** 下的所有文章（按时间倒序）。
@@ -94,14 +116,14 @@
 
 ---
 
-## 6. 修改后如何查看
+## 7. 修改后如何查看
 
 - **本地预览**：在项目根目录执行 `bundle exec jekyll serve`，浏览器打开提示的地址（如 `http://localhost:4000`）即可查看。
 - **修改 `_config.yml` 后**：需要重启一次 `jekyll serve` 才能生效。
 
 ---
 
-## 7. 文件位置速查
+## 8. 文件位置速查
 
 | 内容           | 文件/目录 |
 |----------------|-----------|

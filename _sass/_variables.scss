@@ -6,22 +6,39 @@
    Typography
    ========================================================================== */
 
-$doc-font-size              : 16;
+$doc-font-size              : 16; /* 用于 em() 换算的基准（px），与 html 字号可独立 */
 
 /* paragraph indention */
 $paragraph-indent           : false; // true, false (default)
 $indent-var                 : 1.3em;
 
-/* system typefaces */
+/*
+   支持的字体变量（可在此替换为其他系统/Web 字体）
+   --------------------------------------------------------------------------
+   - $serif                 : 衬线，正文备用
+   - $sans-serif             : 无衬线（系统 UI 风格）
+   - $monospace              : 等宽（代码）
+   - $sans-serif-narrow      : 窄体无衬线
+   - $helvetica              : Helvetica 系
+   - $georgia                : Georgia
+   - $times                  : Times New Roman
+   - $bodoni                 : Bodoni MT
+   - $calisto                : Calisto MT
+   - $garamond               : Garamond
+   --------------------------------------------------------------------------
+   实际用于页面的三项（改这三项即可切换全站字体）：
+   - $global-font-family     : 正文
+   - $header-font-family     : 标题
+   - $caption-font-family    : 图注/说明
+   --------------------------------------------------------------------------
+*/
 $serif                      : "Times New Roman", Times, serif;
 $sans-serif                 : -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", Arial, sans-serif;
 $monospace                  : Monaco, Consolas, "Lucida Console", monospace;
 
-/* sans serif typefaces */
 $sans-serif-narrow          : $sans-serif;
 $helvetica                  : Helvetica, "Helvetica Neue", Arial, sans-serif;
 
-/* serif typefaces */
 $georgia                    : Georgia, serif;
 $times                      : "Times New Roman", Times, serif;
 $bodoni                     : "Bodoni MT", serif;
@@ -103,7 +120,7 @@ $xing-color                 : #006567;
 
 /* links */
 $link-color                 : $info-color;
-$link-color-hover           : mix(#000000, $link-color, 25%);
+$link-color-hover           : mix(#000, $link-color, 25%);
 $link-color-visited         : mix(#fff, $link-color, 25%);
 $masthead-link-color        : #ffffff;
 $masthead-link-color-hover  : rgba(255, 255, 255, 0.8);
@@ -125,7 +142,7 @@ $x-large                    : 1800px;
 $small                      : 600px !default;
 $medium                     : 768px !default;
 $medium-wide                : 900px !default;
-$large                      : 1280px !default;  /* 主内容区最大宽度，原 925px，已加宽 */
+$large                      : 1100px !default;  /* 主内容区最大宽度，原 925px，已加宽 */
 $x-large                    : 1280px !default;
 
 /*
