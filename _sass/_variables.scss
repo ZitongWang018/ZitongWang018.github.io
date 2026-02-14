@@ -103,7 +103,7 @@ $xing-color                 : #006567;
 
 /* links */
 $link-color                 : $info-color;
-$link-color-hover           : mix(#000, $link-color, 25%);
+$link-color-hover           : mix(#000000, $link-color, 25%);
 $link-color-visited         : mix(#fff, $link-color, 25%);
 $masthead-link-color        : #ffffff;
 $masthead-link-color-hover  : rgba(255, 255, 255, 0.8);
@@ -125,7 +125,7 @@ $x-large                    : 1800px;
 $small                      : 600px !default;
 $medium                     : 768px !default;
 $medium-wide                : 900px !default;
-$large                      : 1100px !default;  /* 主内容区最大宽度，原 925px，已加宽 */
+$large                      : 1280px !default;  /* 主内容区最大宽度，原 925px，已加宽 */
 $x-large                    : 1280px !default;
 
 /*

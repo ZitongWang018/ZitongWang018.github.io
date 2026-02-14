@@ -22,17 +22,15 @@ Weibin Wu, **<u>Zitong Wang</u>**, Zhengjie Luo, Wenqing Chen, Zibin Zheng.
 * Delta-K: Boosting Multi-Instance Generation via Cross-Attention Augmentation  
 _Submitted to ECCV 2026_   
 **<u>Zitong Wang</u>**, Zijun Shen, Zhengjie Luo, Zibin Zheng, Weibin Wu  
-- We propose a recursive framework that integrates visual reasoning signals across diffusion denoising steps, theoretically equivalent to the closed-form solution of a global weighted least-squares objective
 
 * Every Step a Thought: Implicit Visual Reasoning in Diffusion Language Models       
 _Submitted to ICML 2026_
 **<u>Zitong Wang</u>**, Haohao Xu, Zijun Shen, Weibin Wu, Zibin Zheng  
-- We propose a recursive framework that integrates visual reasoning signals across diffusion denoising steps, theoretically equivalent to the closed-form solution of a global weighted least-squares objective
 
 * AdaPonderLM: Gated Pondering Language Models with Token-Wise Adaptive Depth       
 _Submitted to ICML 2026_  
 Shixiang Song, He Li, Zitong Wang, Boyi Zeng, Feichen Song, Yixuan Wang, Ziwei He, Zhouhan Lin  
-- We present AdaPonderLM, a self-supervised recurrent LM that learns token-wise early exiting with monotonic halting and KV reuse, achieving ~10% inference compute savings while preserving perplexity
+
 
 * PonderLM-2: Pretraining LLM with Latent Thoughts in Continuous Space                       
 _Submitted to ICML 2026_  
