@@ -51,6 +51,18 @@
     line-height: 1.5;
   }
 
+  /* 仅放大作者信息块：姓名、签名、地点、邮箱、WeChat、Google Scholar、Github、LinkedIn（用 rem 保证可见） */
+  .author__name {
+    font-size: 1.5rem !important;
+  }
+  .author__bio {
+    font-size: 1.15rem !important;
+  }
+  .author__urls li,
+  .author__urls a {
+    font-size: 1.15rem !important;
+  }
+
   img {
     width: 100%;
   }
@@ -127,19 +139,6 @@
     margin-bottom: 10px;
   }
 }
-/* 仅放大左侧栏作者信息：姓名、签名、地点、邮箱、WeChat、Google Scholar、Github、LinkedIn */
-.sidebar .author__name {
-  font-family: "Times New Roman", Times, serif;
-  font-size: $type-size-3;
-}
-.sidebar .author__bio {
-  font-size: $type-size-4;
-}
-.sidebar .author__urls li,
-.sidebar .author__urls a {
-  font-size: $type-size-4 !important;
-}
-
 .sidebar .author__desktop {
   display: none;
   @media screen and (min-width: 1024px) {
