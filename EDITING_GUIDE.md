@@ -116,14 +116,23 @@
 
 ---
 
-## 7. 修改后如何查看
+## 7. Reading 栏目
+
+- **列表页**：**`_pages/reading.html`**，导航中已加入「Reading」。
+- **单条内容**：在 **`_reading/`** 下新建 **`YYYY-MM-DD-英文短标题.md`**（与 Blog 的日期格式一致）。
+- **Front matter 建议**：`title`、`date`、`excerpt` 必填；可选 `author`（作者/书名）、`venue`（如 Book / Essay / Poem）。正文用 Markdown 写读书笔记、摘抄或短评。
+- **模板**：`_reading/` 下已放三份示例（书、文章、诗/摘抄），可复制后改内容或删掉。
+
+---
+
+## 8. 修改后如何查看
 
 - **本地预览**：在项目根目录执行 `bundle exec jekyll serve`，浏览器打开提示的地址（如 `http://localhost:4000`）即可查看。
 - **修改 `_config.yml` 后**：需要重启一次 `jekyll serve` 才能生效。
 
 ---
 
-## 8. 文件位置速查
+## 9. 文件位置速查
 
 | 内容           | 文件/目录 |
 |----------------|-----------|
@@ -131,8 +140,11 @@
 | 个人头像       | `images/` + `_config.yml` 中 `author.avatar` |
 | 论文列表项     | `_publications/*.md` |
 | 主内容区宽度   | `_sass/_variables.scss` 中 `$large` |
+| 左侧栏字号     | `_sass/_sidebar.scss`（`.sidebar .author__name`、`.sidebar p, li`） |
 | 导航菜单       | `_data/navigation.yml` |
 | 博客文章       | `_posts/*.md` |
 | Blog 页面      | `_pages/blog.html` |
+| Reading 列表项 | `_reading/*.md` |
+| Reading 页面   | `_pages/reading.html` |
 
 如有新需求，可在上述对应位置扩展或再问。
