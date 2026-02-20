@@ -33,7 +33,7 @@ Shixiang Song, He Li, **<u>Zitong Wang</u>**, Boyi Zeng, Feichen Song, Yixu
 
 
 * PonderLM-2: Pretraining LLM with Latent Thoughts in Continuous Space                       
-_Submitted to ICML 2026_    
+_Submitted to ICML 2026_ [[arxiv](https://arxiv.org/pdf/2509.23184)]     
 Boyi Zeng, He Li, Shixiang Song, Yixuan Wang, **<u>Zitong Wang</u>**, Ziwei He, Xinbing Wang, Zhouhan Lin
 
 * Pretraining with Token-Level Adaptive Latent Chain-of-Thought   	                        
