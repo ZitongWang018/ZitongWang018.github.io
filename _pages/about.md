@@ -13,8 +13,7 @@ I'm Zitong Wang, an undergraduate student at [Sun Yat-sen University](https://ww
 
 Currently, I'm working on Loop transformers and LLM-Pretraining.
 
-News🔥
-======
+### News 🔥
 * **[202504]** 1 paper accepted by ICML 2026 as Spotlight (top 2.2%)! See you in Seoul!
 * **[202507]** 1 paper accepted by ACM Multimedia 2025!
 
@@ -35,5 +34,5 @@ Personal Interests
 I love cooking great food🥩, listening to jazz music🎵 and discussing the future tech world🏙️ with others. I also have a strong interest in quantitative trading and investing🪙. Feel free to reach out and chat with me about any of these!
 
 <div style="width: 100%; max-width: 100%; margin-top: 2em; overflow: hidden;">
-  <script type="text/javascript" id="mapmyvisitors" src="//mapmyvisitors.com/map.js?d=JHwSe0hpWslgMZ3XDNF2Scw8_vYLRfXvMykkTfRYY48&cl=ffffff&w=a"></script>
+  <script type="text/javascript" id="mapmyvisitors" src="//mapmyvisitors.com/map.js?d=JHwSe0hpWslgMZ3XDNF2Scw8_vYLRfXvMykkTfRYY48&amp;cl=ffffff&amp;w=a"></script>
 </div>
