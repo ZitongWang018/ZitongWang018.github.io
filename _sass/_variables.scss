@@ -15,29 +15,28 @@ $indent-var                 : 1.3em;
 /*
    支持的字体变量（可在此替换为其他系统/Web 字体）
    --------------------------------------------------------------------------
-   - $dm-sans               : 站点主无衬线（Google Fonts，见 head.html）
-   - $global-font-family    : 正文（应与 $dm-sans 一致）
+   - $site-font             : 站点主字体（当前：Comic Sans MS，系统字体）
+   - $global-font-family    : 正文
    - $header-font-family    : 标题
    - $caption-font-family   : 图注/说明
    - $sans-serif / $sans-serif-narrow / $serif
-       ：主题内多处组件仍会引用；已全部对齐为同一无衬线栈，避免局部仍是系统默认。
-       （Magnific Popup 等 vendor 使用 $serif，原先会变成 Times。）
+       ：主题内多处组件仍会引用；与 $site-font 对齐。
    - $monospace             : 等宽（代码）
    - $georgia / $times 等    : 仅保留以备零星自定义。
    --------------------------------------------------------------------------
 */
 
-/* DM Sans — linked in _includes/head.html before main.css */
-$dm-sans                    : "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+/* Comic Sans MS — Windows/macOS 常见；无则回退到手写体泛 family */
+$site-font                  : "Comic Sans MS", "Comic Sans", "Chalkboard SE", "TSCu_Comic", cursive;
 
-$global-font-family         : $dm-sans;
-$header-font-family         : $dm-sans;
-$caption-font-family        : $dm-sans;
+$global-font-family         : $site-font;
+$header-font-family         : $site-font;
+$caption-font-family        : $site-font;
 
-/* Legacy theme hooks — unified sans */
-$serif                      : $dm-sans;
-$sans-serif                 : $dm-sans;
-$sans-serif-narrow          : $dm-sans;
+/* Legacy theme hooks — unified */
+$serif                      : $site-font;
+$sans-serif                 : $site-font;
+$sans-serif-narrow          : $site-font;
 $monospace                  : Monaco, Consolas, "Lucida Console", monospace;
 
 $helvetica                  : Helvetica, "Helvetica Neue", Arial, sans-serif;

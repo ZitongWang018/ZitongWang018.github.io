@@ -10,6 +10,7 @@
 #
 # 不写 teaser 时，左侧显示灰色占位块。
 - title: "Detecting Violations of Physical Common Sense in Images: A Challenge Dataset and Effective Model"
+  teaser: "/images/phyvib.png"
   badge: "ACM MM 2025"
   venue: "ACM Multimedia 2025 (CCF-A)"
   authors_html: "Weibin Wu, <strong><u>Zitong Wang</u></strong>, Zhengjie Luo, Wenqing Chen, Zibin Zheng."
