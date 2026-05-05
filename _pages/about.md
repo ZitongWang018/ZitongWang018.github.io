@@ -17,7 +17,8 @@ I am also interested in long video understanding and continual learning. To me, 
 
 Currently, I'm working on Loop transformers and LLM-Pretraining.
 
-### News 🔥
+News 🔥
+======
 * **[2026-04]** 1 paper accepted by ICML 2026 as Spotlight (top 2.2%)！ See you in Seoul！
 * **[2025-07]** 1 paper accepted by ACM Multimedia 2025！
 
