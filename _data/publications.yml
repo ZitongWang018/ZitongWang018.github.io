@@ -1,7 +1,7 @@
 # Homepage publication cards — rendered by _includes/publications-list.html
 #
 # 缩略图流程：
-# 1) 准备 teaser 图（jpg/png/webp）。左侧固定框约 560×420px；整图包含在框内（object-fit: contain）；不足处留白为白底。
+# 1) 准备 teaser 图（jpg/png/webp）。左侧固定框约 500×390px；整图包含在框内（object-fit: contain）；不足处留白为白底。
 # 2) 把文件放进仓库的 images/（或 images/pubs/ 子文件夹亦可）。
 # 3) 在下面对应论文条目里增加一行：teaser: "/images/你的文件名.png"
 #    （路径以站点根目录为准，开头要有 /；与 permalink/baseurl 无关，Jekyll 会 relative_url。）
