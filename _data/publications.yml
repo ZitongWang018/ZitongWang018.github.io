@@ -1,5 +1,13 @@
-# Homepage publication cards (see _includes/publications-list.html)
-# Optional: teaser — path under site root, e.g. "/images/pub-phyvib.png"
+# Homepage publication cards — rendered by _includes/publications-list.html
+#
+# 缩略图流程：
+# 1) 准备一张横图（建议约 800×600 或 4:3，jpg/png/webp），体积尽量压小（建议小于 200KB）。
+# 2) 把文件放进仓库的 images/（或 images/pubs/ 子文件夹亦可）。
+# 3) 在下面对应论文条目里增加一行：teaser: "/images/你的文件名.png"
+#    （路径以站点根目录为准，开头要有 /；与 permalink/baseurl 无关，Jekyll 会 relative_url。）
+# 4) git add → commit → push，等 GitHub Pages 构建完成后刷新主页。
+#
+# 不写 teaser 时，左侧显示灰色占位块。
 - title: "Detecting Violations of Physical Common Sense in Images: A Challenge Dataset and Effective Model"
   badge: "ACM MM 2025"
   venue: "ACM Multimedia 2025 (CCF-A)"
