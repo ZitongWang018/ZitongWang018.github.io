@@ -17,6 +17,9 @@
     <div class="pub-card__body">
       <h3 class="pub-card__title">{{ pub.title }}</h3>
       <p class="pub-card__authors">{{ pub.authors_html }}</p>
+      {% if pub.authors_note_html %}
+      <p class="pub-card__authors-note">{{ pub.authors_note_html }}</p>
+      {% endif %}
       {% if pub.venue %}
       <p class="pub-card__venue"><em>{{ pub.venue }}</em></p>
       {% endif %}

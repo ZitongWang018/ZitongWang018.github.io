@@ -101,6 +101,14 @@ $pub-thumb-max-width: 920px;
   color: $text-color;
 }
 
+.pub-card__authors-note {
+  margin: -0.25rem 0 0.45rem;
+  font-size: 0.6875rem;
+  line-height: 1.45;
+  color: mix(#fff, $gray, 28%);
+  font-weight: 400;
+}
+
 .pub-card__venue {
   margin: 0 0 0.85rem;
   font-size: $type-size-6;

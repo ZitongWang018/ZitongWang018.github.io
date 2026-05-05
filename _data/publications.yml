@@ -8,11 +8,13 @@
 # 4) git add → commit → push，等 GitHub Pages 构建完成后刷新主页。
 #
 # 不写 teaser 时，左侧显示灰色占位块。
+# Optional: authors_note_html — 作者下一行浅色小字说明（可用英文）。
 - title: "Detecting Violations of Physical Common Sense in Images: A Challenge Dataset and Effective Model"
   teaser: "/images/phyvib.png"
   badge: "ACM MM 2025"
   venue: "ACM Multimedia 2025 (CCF-A)"
   authors_html: "Weibin Wu, <strong><u>Zitong Wang</u></strong>, Zhengjie Luo, Wenqing Chen, Zibin Zheng"
+  authors_note_html: "Leading student author"
   links:
     - label: PDF
       url: "https://dl.acm.org/doi/pdf/10.1145/3746027.3755124"
