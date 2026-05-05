@@ -5,11 +5,13 @@
   {% for pub in pubs %}
   <article class="pub-card">
     <div class="pub-card__media">
-      {% if pub.teaser %}
-      <img class="pub-card__thumb" src="{{ pub.teaser | relative_url }}" alt="" loading="lazy" decoding="async">
-      {% else %}
-      <div class="pub-card__thumb-placeholder" aria-hidden="true"></div>
-      {% endif %}
+      <div class="pub-card__thumb-frame">
+        {% if pub.teaser %}
+        <img class="pub-card__thumb" src="{{ pub.teaser | relative_url }}" alt="" loading="lazy" decoding="async">
+        {% else %}
+        <div class="pub-card__thumb-placeholder" aria-hidden="true"></div>
+        {% endif %}
+      </div>
       {% if pub.badge %}
       <span class="pub-card__badge">{{ pub.badge }}</span>
       {% endif %}

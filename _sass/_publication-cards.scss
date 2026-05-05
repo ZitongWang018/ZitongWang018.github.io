@@ -3,9 +3,9 @@
    ========================================================================== */
 
 $pub-badge-purple: #5a1a8a;
-/* Teaser — narrower column + max-height so thumbnails appear shorter */
-$pub-thumb-max-width: 440px;
-$pub-thumb-max-height: 260px;
+/* Teaser — fixed uniform frame; image scales down with object-fit: contain (full image visible) */
+$pub-thumb-box-width: 360px;
+$pub-thumb-box-height: 210px;
 
 .pub-cards {
   margin: 1rem 0 2rem;
@@ -28,37 +28,45 @@ $pub-thumb-max-height: 260px;
 .pub-card__media {
   position: relative;
   flex: 0 0 auto;
-  width: auto;
-  /* Literal CSS min() — libsass cannot mix % and px in Sass min(); browsers compute this fine */
-  max-width: unquote("min(100%, #{$pub-thumb-max-width})");
+  width: unquote("min(100%, #{$pub-thumb-box-width})");
+  max-width: unquote("min(100%, #{$pub-thumb-box-width})");
   align-self: flex-start;
 
   @include breakpoint(max-width $medium) {
+    width: 100%;
     max-width: 100%;
   }
 }
 
-.pub-card__thumb {
-  display: block;
-  width: auto;
-  max-width: 100%;
-  max-height: $pub-thumb-max-height;
-  height: auto;
-  object-fit: contain;
+.pub-card__thumb-frame {
+  box-sizing: border-box;
+  width: 100%;
+  height: $pub-thumb-box-height;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
   border-radius: 4px;
   border: 1px solid $border-color;
   background: $lighter-gray;
 }
 
+.pub-card__thumb {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
 .pub-card__thumb-placeholder {
   box-sizing: border-box;
-  width: auto;
-  min-width: 200px;
-  max-width: 100%;
-  min-height: 240px;
-  height: 240px;
-  border-radius: 4px;
-  border: 1px solid $border-color;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  border-radius: 3px;
+  border: 0;
   background: linear-gradient(
     145deg,
     mix(#fff, $lighter-gray, 35%) 0%,
