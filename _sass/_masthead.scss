@@ -23,7 +23,7 @@
     align-items: center;
     height: 100%;
     padding: 0 1em;
-    font-family: "Times New Roman", Times, serif;
+    font-family: $header-font-family;
 
     @include breakpoint($x-large) {
       max-width: $x-large;
