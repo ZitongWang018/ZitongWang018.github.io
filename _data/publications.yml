@@ -37,6 +37,7 @@
   links: []
 
 - title: "PonderLM-2: Pretraining LLM with Latent Thoughts in Continuous Space"
+  teaser: "/images/ponderlm2.png"
   badge: "ICML Spotlight"
   venue: "ICML 2026 Spotlight (top 2.2%)"
   authors_html: "Boyi Zeng, He Li, Shixiang Song, Yixuan Wang, <strong><u>Zitong Wang</u></strong>, Ziwei He, Xinbing Wang, Zhouhan Lin"
