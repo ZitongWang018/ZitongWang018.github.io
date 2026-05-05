@@ -3,6 +3,9 @@
    ========================================================================== */
 
 $pub-badge-purple: #5a1a8a;
+/* Thumbnail column: wider for clearer teaser figures */
+$pub-thumb-column-width: 300px;
+$pub-thumb-aspect-ratio: 3 / 2;
 
 .pub-cards {
   margin: 1rem 0 2rem;
@@ -24,20 +27,20 @@ $pub-badge-purple: #5a1a8a;
 
 .pub-card__media {
   position: relative;
-  flex: 0 0 200px;
-  width: 200px;
+  flex: 0 0 $pub-thumb-column-width;
+  width: $pub-thumb-column-width;
   max-width: 100%;
 
   @include breakpoint(max-width $medium) {
     flex: none;
     width: 100%;
-    max-width: 280px;
+    max-width: min(100%, 380px);
   }
 }
 
 .pub-card__thumb {
   width: 100%;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: $pub-thumb-aspect-ratio;
   object-fit: cover;
   border-radius: 4px;
   border: 1px solid $border-color;
@@ -47,7 +50,7 @@ $pub-badge-purple: #5a1a8a;
 
 .pub-card__thumb-placeholder {
   width: 100%;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: $pub-thumb-aspect-ratio;
   border-radius: 4px;
   border: 1px solid $border-color;
   background: linear-gradient(
