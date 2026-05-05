@@ -21,22 +21,33 @@
       url: "https://github.com/ZitongWang018/PhyVIB"
 
 - title: "Delta-K: Boosting Multi-Instance Generation via Cross-Attention Augmentation"
-  badge: "Preprint"
-  venue: "Under review"
-  authors_html: "<strong><u>Zitong Wang</u></strong>, Zijun Shen, Zhengjie Luo, Zibin Zheng, Weibin Wu"
-  links: []
+  teaser: "/images/Deltak.png"
+  badge: "arXiv"
+  venue: "arXiv preprint"
+  authors_html: "<strong><u>Zitong Wang</u></strong>, Zijun Shen, Haohao Xu, Zhengjie Luo, Weibin Wu"
+  links:
+    - label: PDF
+      url: "https://arxiv.org/pdf/2603.10210.pdf"
+    - label: arXiv
+      url: "https://arxiv.org/abs/2603.10210"
 
 - title: "Every Step a Thought: Implicit Visual Reasoning in Diffusion Language Models"
+  teaser: "/images/Everystepathought.png"
   badge: "Preprint"
   venue: "Under review"
   authors_html: "<strong><u>Zitong Wang</u></strong>, Haohao Xu, Zijun Shen, Weibin Wu, Zibin Zheng"
   links: []
 
 - title: "AdaPonderLM: Gated Pondering Language Models with Token-Wise Adaptive Depth"
-  badge: "Preprint"
-  venue: "Under review"
+  teaser: "/images/AdaPonderLM.png"
+  badge: "arXiv"
+  venue: "arXiv preprint"
   authors_html: "Shixiang Song, He Li, <strong><u>Zitong Wang</u></strong>, Boyi Zeng, Feichen Song, Yixuan Wang, Ziwei He, Zhouhan Lin"
-  links: []
+  links:
+    - label: PDF
+      url: "https://arxiv.org/pdf/2603.01914"
+    - label: arXiv
+      url: "https://arxiv.org/abs/2603.01914"
 
 - title: "PonderLM-2: Pretraining LLM with Latent Thoughts in Continuous Space"
   teaser: "/images/ponderlm2.png"
@@ -48,7 +59,12 @@
       url: "https://arxiv.org/pdf/2509.23184"
 
 - title: "Pretraining with Token-Level Adaptive Latent Chain-of-Thought"
-  badge: "Preprint"
-  venue: "Under review"
+  teaser: "/images/PretrainingwithToken-LevelAdaptiveLatentChain-of-Thought.png"
+  badge: "arXiv"
+  venue: "arXiv preprint"
   authors_html: "Boyi Zeng, Yiqin Hao, He Li, Shixiang Song, Feichen Song, <strong><u>Zitong Wang</u></strong>, Siyuan Huang, Yi Xu, Ziwei He, Xinbing Wang, Zhouhan Lin"
-  links: []
+  links:
+    - label: PDF
+      url: "https://arxiv.org/pdf/2602.08220.pdf"
+    - label: arXiv
+      url: "https://arxiv.org/abs/2602.08220"
