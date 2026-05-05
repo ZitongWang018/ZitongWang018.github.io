@@ -16,6 +16,13 @@ body {
   font-family: $global-font-family;
   line-height: 1.5;
 
+  /* Ensure main chrome inherits site font (some resets/widgets leave gaps on GitHub Pages) */
+  #main,
+  .masthead,
+  .sidebar {
+    font-family: $global-font-family;
+  }
+
   &.overflow--hidden {
     /* when primary navigation is visible, the content in the background won't scroll */
     overflow: hidden;

@@ -15,7 +15,7 @@ $indent-var                 : 1.3em;
 /*
    支持的字体变量（可在此替换为其他系统/Web 字体）
    --------------------------------------------------------------------------
-   - $site-font             : 站点主字体（当前：Comic Sans MS，系统字体）
+   - $site-font             : Comic Sans MS + Comic Neue（Google Fonts，head.html）后备
    - $global-font-family    : 正文
    - $header-font-family    : 标题
    - $caption-font-family   : 图注/说明
@@ -26,8 +26,8 @@ $indent-var                 : 1.3em;
    --------------------------------------------------------------------------
 */
 
-/* Comic Sans MS — Windows/macOS 常见；无则回退到手写体泛 family */
-$site-font                  : "Comic Sans MS", "Comic Sans", "Chalkboard SE", "TSCu_Comic", cursive;
+/* Comic Sans MS（系统）+ Comic Neue（Web）；避免落到浏览器默认 cursive 不像 Comic */
+$site-font                  : "Comic Sans MS", "Comic Sans", "Comic Neue", "Chalkboard SE", "TSCu_Comic", ui-rounded, "Segoe Print", "Bradley Hand", cursive, sans-serif;
 
 $global-font-family         : $site-font;
 $header-font-family         : $site-font;

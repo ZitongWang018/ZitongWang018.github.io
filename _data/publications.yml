@@ -1,8 +1,7 @@
 # Homepage publication cards — rendered by _includes/publications-list.html
 #
 # 缩略图流程：
-# 1) 准备 teaser 图（jpg/png/webp，体积尽量压小）。主页会按图片原始比例显示：
-#    宽度不超过约 520px（随图自适应），高度不超过约 400px（更高图会整体缩小以保持比例）。
+# 1) 准备 teaser 图（jpg/png/webp）。主页按原始纵横比展示，宽度上限约 920px（随容器收窄）；高度不裁切。
 # 2) 把文件放进仓库的 images/（或 images/pubs/ 子文件夹亦可）。
 # 3) 在下面对应论文条目里增加一行：teaser: "/images/你的文件名.png"
 #    （路径以站点根目录为准，开头要有 /；与 permalink/baseurl 无关，Jekyll 会 relative_url。）
@@ -13,7 +12,7 @@
   teaser: "/images/phyvib.png"
   badge: "ACM MM 2025"
   venue: "ACM Multimedia 2025 (CCF-A)"
-  authors_html: "Weibin Wu, <strong><u>Zitong Wang</u></strong>, Zhengjie Luo, Wenqing Chen, Zibin Zheng."
+  authors_html: "Weibin Wu, <strong><u>Zitong Wang</u></strong>, Zhengjie Luo, Wenqing Chen, Zibin Zheng"
   links:
     - label: PDF
       url: "https://dl.acm.org/doi/pdf/10.1145/3746027.3755124"
