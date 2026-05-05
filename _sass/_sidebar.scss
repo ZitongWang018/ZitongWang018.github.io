@@ -91,22 +91,28 @@
 .author__avatar {
   display: table-cell;
   vertical-align: top;
-  width: 36px;
-  // set width only, for non-square avatars
-  // height: 36px;
+  /* Was 36px — clips wide avatars inside anonymous table layout */
+  width: auto;
+  max-width: 200px;
+  overflow: visible;
 
   @include breakpoint($large) {
     display: block;
     width: auto;
+    max-width: none;
     height: auto;
   }
 
+  /* Perfect circle: equal sides + 50% radius (non-square + 50% => ellipse / looks “cut off”). */
   img {
+    display: block;
+    box-sizing: border-box;
     max-width: 200px;
     width: 200px;
-    height: 240px;
-    aspect-ratio: 5 / 6;
+    height: 200px;
+    aspect-ratio: 1;
     object-fit: cover;
+    object-position: center center;
     border-radius: 50%;
 
     @include breakpoint($large) {
