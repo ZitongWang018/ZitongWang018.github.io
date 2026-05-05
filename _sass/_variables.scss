@@ -15,28 +15,31 @@ $indent-var                 : 1.3em;
 /*
    支持的字体变量（可在此替换为其他系统/Web 字体）
    --------------------------------------------------------------------------
-   - $serif                 : 衬线，正文备用
-   - $sans-serif             : 无衬线（系统 UI 风格）
-   - $monospace              : 等宽（代码）
-   - $sans-serif-narrow      : 窄体无衬线
-   - $helvetica              : Helvetica 系
-   - $georgia                : Georgia
-   - $times                  : Times New Roman
-   - $bodoni                 : Bodoni MT
-   - $calisto                : Calisto MT
-   - $garamond               : Garamond
-   --------------------------------------------------------------------------
-   实际用于页面的三项（改这三项即可切换全站字体）：
-   - $global-font-family     : 正文
-   - $header-font-family     : 标题
-   - $caption-font-family    : 图注/说明
+   - $dm-sans               : 站点主无衬线（Google Fonts，见 head.html）
+   - $global-font-family    : 正文（应与 $dm-sans 一致）
+   - $header-font-family    : 标题
+   - $caption-font-family   : 图注/说明
+   - $sans-serif / $sans-serif-narrow / $serif
+       ：主题内多处组件仍会引用；已全部对齐为同一无衬线栈，避免局部仍是系统默认。
+       （Magnific Popup 等 vendor 使用 $serif，原先会变成 Times。）
+   - $monospace             : 等宽（代码）
+   - $georgia / $times 等    : 仅保留以备零星自定义。
    --------------------------------------------------------------------------
 */
-$serif                      : "Times New Roman", Times, serif;
-$sans-serif                 : -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", Arial, sans-serif;
+
+/* DM Sans — linked in _includes/head.html before main.css */
+$dm-sans                    : "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+$global-font-family         : $dm-sans;
+$header-font-family         : $dm-sans;
+$caption-font-family        : $dm-sans;
+
+/* Legacy theme hooks — unified sans */
+$serif                      : $dm-sans;
+$sans-serif                 : $dm-sans;
+$sans-serif-narrow          : $dm-sans;
 $monospace                  : Monaco, Consolas, "Lucida Console", monospace;
 
-$sans-serif-narrow          : $sans-serif;
 $helvetica                  : Helvetica, "Helvetica Neue", Arial, sans-serif;
 
 $georgia                    : Georgia, serif;
@@ -44,13 +47,6 @@ $times                      : "Times New Roman", Times, serif;
 $bodoni                     : "Bodoni MT", serif;
 $calisto                    : "Calisto MT", serif;
 $garamond                   : Garamond, serif;
-
-/* DM Sans — linked in _includes/head.html before main.css */
-$dm-sans                    : "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-
-$global-font-family         : $dm-sans;
-$header-font-family         : $dm-sans;
-$caption-font-family        : $dm-sans;
 
 /* type scale */
 $type-size-1                : 2.441em;  // ~39.056px
