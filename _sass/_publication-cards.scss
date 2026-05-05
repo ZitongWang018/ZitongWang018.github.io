@@ -3,9 +3,9 @@
    ========================================================================== */
 
 $pub-badge-purple: #5a1a8a;
-/* Teaser — banner-shaped preview: slightly narrower column + lower height for wide figures (contain). */
-$pub-thumb-box-width: 340px;
-$pub-thumb-box-height: 200px;
+/* Teaser — fixed frame for homepage publication thumbnails (contain, white letterboxing). */
+$pub-thumb-box-width: 480px;
+$pub-thumb-box-height: 300px;
 
 .pub-cards {
   margin: 1rem 0 2rem;
