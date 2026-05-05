@@ -15,31 +15,8 @@ Currently, I'm working on Loop transformers and LLM-Pretraining.
 
 Publication
 ======
-* Detecting Violations of Physical Common Sense in Images: A Challenge Dataset and Effective Model  
-_ACM Multimedia 2025_ [CCF-A, [pdf](https://dl.acm.org/doi/pdf/10.1145/3746027.3755124) [examples](https://github.com/ZitongWang018/PhyVIB)  ]  
-Weibin Wu, **<u>Zitong Wang</u>**, Zhengjie Luo, Wenqing Chen, Zibin Zheng.
 
-* Delta-K: Boosting Multi-Instance Generation via Cross-Attention Augmentation  
-_Under-review_   
-**<u>Zitong Wang</u>**, Zijun Shen, Zhengjie Luo, Zibin Zheng, Weibin Wu  
-
-* Every Step a Thought: Implicit Visual Reasoning in Diffusion Language Models       
-_Under-review_  
-**<u>Zitong Wang</u>**, Haohao Xu, Zijun Shen, Weibin Wu, Zibin Zheng  
-
-* AdaPonderLM: Gated Pondering Language Models with Token-Wise Adaptive Depth       
-_Under-review_    
-Shixiang Song, He Li, **<u>Zitong Wang</u>**, Boyi Zeng, Feichen Song, Yixuan Wang, Ziwei He, Zhouhan Lin  
-
-
-* PonderLM-2: Pretraining LLM with Latent Thoughts in Continuous Space                       
-_ICML 2026 Spotlight (top 2.2%)_ [[arxiv](https://arxiv.org/pdf/2509.23184)]     
-Boyi Zeng, He Li, Shixiang Song, Yixuan Wang, **<u>Zitong Wang</u>**, Ziwei He, Xinbing Wang, Zhouhan Lin
-
-* Pretraining with Token-Level Adaptive Latent Chain-of-Thought   	                        
-_Under-review_    
-Boyi Zeng, Yiqin Hao, He Li, Shixiang Song, Feichen Song, **<u>Zitong Wang</u>**, Siyuan Huang, Yi Xu, Ziwei He, Xinbing Wang, Zhouhan Lin
-
+{% include publications-list.html %}
 
 Selected Awards and Honors
 ======

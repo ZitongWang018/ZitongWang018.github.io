@@ -1,0 +1,135 @@
+/* ==========================================================================
+   Homepage publication cards (about page)
+   ========================================================================== */
+
+$pub-badge-purple: #5a1a8a;
+
+.pub-cards {
+  margin: 1rem 0 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.pub-card {
+  display: flex;
+  flex-direction: row;
+  gap: 1.25rem;
+  align-items: flex-start;
+
+  @include breakpoint(max-width $medium) {
+    flex-direction: column;
+  }
+}
+
+.pub-card__media {
+  position: relative;
+  flex: 0 0 200px;
+  width: 200px;
+  max-width: 100%;
+
+  @include breakpoint(max-width $medium) {
+    flex: none;
+    width: 100%;
+    max-width: 280px;
+  }
+}
+
+.pub-card__thumb {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 4px;
+  border: 1px solid $border-color;
+  display: block;
+  background: $lighter-gray;
+}
+
+.pub-card__thumb-placeholder {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: 4px;
+  border: 1px solid $border-color;
+  background: linear-gradient(
+    145deg,
+    mix(#fff, $lighter-gray, 35%) 0%,
+    $lighter-gray 55%,
+    mix(#000, $lighter-gray, 4%) 100%
+  );
+}
+
+.pub-card__badge {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: $pub-badge-purple;
+  color: #fff;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  padding: 0.35em 0.6em;
+  border-radius: 4px;
+  line-height: 1.25;
+  max-width: calc(100% - 1rem);
+  text-align: center;
+  box-shadow: 0 1px 2px rgba(#000, 0.12);
+}
+
+.pub-card__body {
+  flex: 1;
+  min-width: 0;
+}
+
+.pub-card__title {
+  margin: 0 0 0.5rem !important;
+  font-size: 1.0625rem !important;
+  font-weight: 700;
+  line-height: 1.35;
+  font-family: $global-font-family !important;
+}
+
+.pub-card__authors {
+  margin: 0 0 0.45rem;
+  font-size: $type-size-6;
+  line-height: 1.55;
+  color: $text-color;
+}
+
+.pub-card__venue {
+  margin: 0 0 0.85rem;
+  font-size: $type-size-6;
+  color: mix(#000, $gray, 10%);
+}
+
+.pub-card__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+a.pub-card__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.45em 1em;
+  font-size: $type-size-6;
+  font-weight: 500;
+  font-family: $global-font-family;
+  color: $text-color !important;
+  text-decoration: none !important;
+  border: 1px solid mix(#000, $border-color, 8%);
+  border-radius: 4px;
+  background: #fff;
+  transition: border-color 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
+
+  &:hover {
+    border-color: mix(#000, $border-color, 25%);
+    background: mix(#fff, $lighter-gray, 55%);
+    box-shadow: 0 1px 2px rgba(#000, 0.06);
+  }
+
+  &:focus-visible {
+    outline: 2px solid $pub-badge-purple;
+    outline-offset: 2px;
+  }
+}

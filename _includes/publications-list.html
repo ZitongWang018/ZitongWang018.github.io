@@ -1,0 +1,34 @@
+{% comment %}Rendered on homepage; data in _data/publications.yml{% endcomment %}
+{% assign pubs = site.data.publications %}
+{% if pubs %}
+<div class="pub-cards">
+  {% for pub in pubs %}
+  <article class="pub-card">
+    <div class="pub-card__media">
+      {% if pub.teaser %}
+      <img class="pub-card__thumb" src="{{ pub.teaser | relative_url }}" alt="" loading="lazy" width="400" height="300">
+      {% else %}
+      <div class="pub-card__thumb-placeholder" aria-hidden="true"></div>
+      {% endif %}
+      {% if pub.badge %}
+      <span class="pub-card__badge">{{ pub.badge }}</span>
+      {% endif %}
+    </div>
+    <div class="pub-card__body">
+      <h3 class="pub-card__title">{{ pub.title }}</h3>
+      <p class="pub-card__authors">{{ pub.authors_html }}</p>
+      {% if pub.venue %}
+      <p class="pub-card__venue"><em>{{ pub.venue }}</em></p>
+      {% endif %}
+      {% if pub.links and pub.links.size > 0 %}
+      <div class="pub-card__actions">
+        {% for link in pub.links %}
+        <a class="pub-card__btn" href="{{ link.url }}" target="_blank" rel="noopener noreferrer">{{ link.label }}</a>
+        {% endfor %}
+      </div>
+      {% endif %}
+    </div>
+  </article>
+  {% endfor %}
+</div>
+{% endif %}

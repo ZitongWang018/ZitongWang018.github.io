@@ -1,0 +1,43 @@
+# Homepage publication cards (see _includes/publications-list.html)
+# Optional: teaser — path under site root, e.g. "/images/pub-phyvib.png"
+- title: "Detecting Violations of Physical Common Sense in Images: A Challenge Dataset and Effective Model"
+  badge: "ACM MM 2025"
+  venue: "ACM Multimedia 2025 (CCF-A)"
+  authors_html: "Weibin Wu, <strong><u>Zitong Wang</u></strong>, Zhengjie Luo, Wenqing Chen, Zibin Zheng."
+  links:
+    - label: PDF
+      url: "https://dl.acm.org/doi/pdf/10.1145/3746027.3755124"
+    - label: Project
+      url: "https://github.com/ZitongWang018/PhyVIB"
+
+- title: "Delta-K: Boosting Multi-Instance Generation via Cross-Attention Augmentation"
+  badge: "Preprint"
+  venue: "Under review"
+  authors_html: "<strong><u>Zitong Wang</u></strong>, Zijun Shen, Zhengjie Luo, Zibin Zheng, Weibin Wu"
+  links: []
+
+- title: "Every Step a Thought: Implicit Visual Reasoning in Diffusion Language Models"
+  badge: "Preprint"
+  venue: "Under review"
+  authors_html: "<strong><u>Zitong Wang</u></strong>, Haohao Xu, Zijun Shen, Weibin Wu, Zibin Zheng"
+  links: []
+
+- title: "AdaPonderLM: Gated Pondering Language Models with Token-Wise Adaptive Depth"
+  badge: "Preprint"
+  venue: "Under review"
+  authors_html: "Shixiang Song, He Li, <strong><u>Zitong Wang</u></strong>, Boyi Zeng, Feichen Song, Yixuan Wang, Ziwei He, Zhouhan Lin"
+  links: []
+
+- title: "PonderLM-2: Pretraining LLM with Latent Thoughts in Continuous Space"
+  badge: "ICML Spotlight"
+  venue: "ICML 2026 Spotlight (top 2.2%)"
+  authors_html: "Boyi Zeng, He Li, Shixiang Song, Yixuan Wang, <strong><u>Zitong Wang</u></strong>, Ziwei He, Xinbing Wang, Zhouhan Lin"
+  links:
+    - label: PDF
+      url: "https://arxiv.org/pdf/2509.23184"
+
+- title: "Pretraining with Token-Level Adaptive Latent Chain-of-Thought"
+  badge: "Preprint"
+  venue: "Under review"
+  authors_html: "Boyi Zeng, Yiqin Hao, He Li, Shixiang Song, Feichen Song, <strong><u>Zitong Wang</u></strong>, Siyuan Huang, Yi Xu, Ziwei He, Xinbing Wang, Zhouhan Lin"
+  links: []
