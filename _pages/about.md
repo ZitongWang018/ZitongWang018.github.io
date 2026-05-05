@@ -9,7 +9,11 @@ redirect_from:
 
 About me
 ======
-I'm Zitong Wang, an undergraduate student at [Sun Yat-sen University](https://www.sysu.edu.cn/). I am currently interning at the [LUMIA Lab](https://github.com/LUMIA-Group), supervised by Prof. [Zhouhan Lin](https://hantek.github.io/). During my undergraduate studies, I am also mentored by Prof. [Weibin Wu](https://sse.sysu.edu.cn/teacher/249) . My research interests lies on <u>the Structure of Language Model and Self-Supervised Learning</u> , and I believe Transformers are far from enough for AGI. 
+I'm Zitong Wang, an undergraduate student at [Sun Yat-sen University](https://www.sysu.edu.cn/). I am currently interning at the [LUMIA Lab](https://github.com/LUMIA-Group), supervised by Prof. [Zhouhan Lin](https://hantek.github.io/). During my undergraduate studies, I am also mentored by Prof. [Weibin Wu](https://sse.sysu.edu.cn/teacher/249).
+
+My research interests focus on representation learning, generative models, and efficient LLM architectures. I believe Transformers are far from enough for AGI.
+
+I am also interested in long video understanding and continual learning. To me, they symbolize how machines understand the world, how they express that understanding, and how people efficiently utilize these powerful machines in reality. 
 
 Currently, I'm working on Loop transformers and LLM-Pretraining.
 
