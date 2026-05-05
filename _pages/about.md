@@ -13,6 +13,11 @@ I'm Zitong Wang, an undergraduate student at [Sun Yat-sen University](https://ww
 
 Currently, I'm working on Loop transformers and LLM-Pretraining.
 
+News🔥
+======
+* **[202504]** 1 paper accepted by ICML 2026 as Spotlight (top 2.2%)! See you in Seoul!
+* **[202507]** 1 paper accepted by ACM Multimedia 2025!
+
 Publication
 ======
 
