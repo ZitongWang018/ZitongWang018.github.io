@@ -15,8 +15,8 @@
 ## 2. 个人照片（头像）
 
 - **图片位置**：把个人照片放到 **`images/`** 文件夹。
-- **文件名**：在 **`_config.yml`** 里找到 `author` → `avatar`，当前为 **`selfie.jpg`**。  
-  - 若继续用 `selfie.jpg`，只需把新照片命名为 `selfie.jpg` 并放进 `images/` 覆盖即可。  
+- **文件名**：在 **`_config.yml`** 里找到 `author` → `avatar`，当前为 **`new_self.png`**。  
+  - 若继续用 `new_self.png`，只需把新照片命名为 `new_self.png` 并放进 `images/` 覆盖即可。  
   - 若用别的文件名（如 `profile.jpg`），在 `avatar` 处改为 `"profile.jpg"`，并把照片放到 `images/` 下。
 
 ---
