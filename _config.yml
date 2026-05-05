@@ -22,7 +22,7 @@ repository               : "ZitongWang018/ZitongWang018.github.io"
 author:
   # Biographic information
   avatar           : "aa.jpg"   # 个人头像：将照片放在 images/ 下，此处填文件名
-  wechat_image     : "wechat.png"  # 微信二维码：将图片放在 images/ 下，此处填文件名
+  wechat_image     : "wechat.jpg"  # 微信二维码：将图片放在 images/ 下，此处填文件名
   name             : "Zitong Wang"
   # pronouns         : "he/him"  
   bio              : "Apple trees that grow up at night"
