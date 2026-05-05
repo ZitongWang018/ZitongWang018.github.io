@@ -28,7 +28,8 @@ $pub-thumb-max-width: 920px;
   position: relative;
   flex: 0 0 auto;
   width: auto;
-  max-width: min(100%, $pub-thumb-max-width);
+  /* Literal CSS min() — libsass cannot mix % and px in Sass min(); browsers compute this fine */
+  max-width: unquote("min(100%, #{$pub-thumb-max-width})");
   align-self: flex-start;
 
   @include breakpoint(max-width $medium) {
