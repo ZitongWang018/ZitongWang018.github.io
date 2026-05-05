@@ -7,6 +7,28 @@ author_profile: true
 
 {% include base_path %}
 
-{% for post in site.posts %}
+<p>Posts are grouped by topic: <strong>Life</strong>, <strong>Study</strong>, and <strong>Thought</strong>.</p>
+
+{% assign life_posts = site.categories['life'] | sort: 'date' | reverse %}
+{% if life_posts.size > 0 %}
+<h2 id="life" class="archive__subtitle">Life</h2>
+{% for post in life_posts %}
   {% include archive-single.html %}
 {% endfor %}
+{% endif %}
+
+{% assign study_posts = site.categories['study'] | sort: 'date' | reverse %}
+{% if study_posts.size > 0 %}
+<h2 id="study" class="archive__subtitle">Study</h2>
+{% for post in study_posts %}
+  {% include archive-single.html %}
+{% endfor %}
+{% endif %}
+
+{% assign thought_posts = site.categories['thought'] | sort: 'date' | reverse %}
+{% if thought_posts.size > 0 %}
+<h2 id="thought" class="archive__subtitle">Thought</h2>
+{% for post in thought_posts %}
+  {% include archive-single.html %}
+{% endfor %}
+{% endif %}
