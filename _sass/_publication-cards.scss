@@ -5,7 +5,7 @@
 $pub-badge-purple: #5a1a8a;
 /* Teaser — fixed uniform frame; image scales down with object-fit: contain (full image visible) */
 $pub-thumb-box-width: 360px;
-$pub-thumb-box-height: 210px;
+$pub-thumb-box-height: 228px;
 
 .pub-cards {
   margin: 1rem 0 2rem;
@@ -48,7 +48,8 @@ $pub-thumb-box-height: 210px;
   overflow: hidden;
   border-radius: 4px;
   border: 1px solid $border-color;
-  background: $lighter-gray;
+  /* Letterboxing (contain): white bars when image is narrower/shorter than frame */
+  background: $body-color;
 }
 
 .pub-card__thumb {
