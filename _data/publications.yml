@@ -1,7 +1,7 @@
 # Homepage publication cards — rendered by _includes/publications-list.html
 #
 # 缩略图流程：
-# 1) 准备 teaser 图（jpg/png/webp）。左侧固定框约 480×280px；整图包含在框内（object-fit: contain）；不足处留白为白底。
+# 1) 准备 teaser 图（jpg/png/webp）。左侧固定框约 460×248px；整图包含在框内（object-fit: contain）；不足处留白为白底。
 # 2) 把文件放进仓库的 images/（或 images/pubs/ 子文件夹亦可）。
 # 3) 在下面对应论文条目里增加一行：teaser: "/images/你的文件名.png"
 #    （路径以站点根目录为准，开头要有 /；与 permalink/baseurl 无关，Jekyll 会 relative_url。）
@@ -32,6 +32,15 @@
     - label: arXiv
       url: "https://arxiv.org/abs/2603.10210"
 
+- title: "PonderLM-2: Pretraining LLM with Latent Thoughts in Continuous Space"
+  teaser: "/images/ponderlm2.png"
+  badge: "ICML Spotlight"
+  venue: "ICML 2026 Spotlight (top 2.2%)"
+  authors_html: "Boyi Zeng, He Li, Shixiang Song, Yixuan Wang, <strong><u>Zitong Wang</u></strong>, Ziwei He, Xinbing Wang, Zhouhan Lin"
+  links:
+    - label: PDF
+      url: "https://arxiv.org/pdf/2509.23184"
+
 - title: "Every Step a Thought: Implicit Visual Reasoning in Diffusion Language Models"
   teaser: "/images/Everystepathought.png"
   badge: "Preprint"
@@ -49,15 +58,6 @@
       url: "https://arxiv.org/pdf/2603.01914"
     - label: arXiv
       url: "https://arxiv.org/abs/2603.01914"
-
-- title: "PonderLM-2: Pretraining LLM with Latent Thoughts in Continuous Space"
-  teaser: "/images/ponderlm2.png"
-  badge: "ICML Spotlight"
-  venue: "ICML 2026 Spotlight (top 2.2%)"
-  authors_html: "Boyi Zeng, He Li, Shixiang Song, Yixuan Wang, <strong><u>Zitong Wang</u></strong>, Ziwei He, Xinbing Wang, Zhouhan Lin"
-  links:
-    - label: PDF
-      url: "https://arxiv.org/pdf/2509.23184"
 
 - title: "Pretraining with Token-Level Adaptive Latent Chain-of-Thought"
   teaser: "/images/PretrainingwithToken-LevelAdaptiveLatentChain-of-Thought.png"
