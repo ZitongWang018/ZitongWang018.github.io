@@ -6,7 +6,7 @@
   <article class="pub-card">
     <div class="pub-card__media">
       {% if pub.teaser %}
-      <img class="pub-card__thumb" src="{{ pub.teaser | relative_url }}" alt="" loading="lazy" width="400" height="300">
+      <img class="pub-card__thumb" src="{{ pub.teaser | relative_url }}" alt="" loading="lazy" decoding="async">
       {% else %}
       <div class="pub-card__thumb-placeholder" aria-hidden="true"></div>
       {% endif %}

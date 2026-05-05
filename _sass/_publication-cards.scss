@@ -3,9 +3,9 @@
    ========================================================================== */
 
 $pub-badge-purple: #5a1a8a;
-/* Thumbnail column: wider for clearer teaser figures */
-$pub-thumb-column-width: 300px;
-$pub-thumb-aspect-ratio: 3 / 2;
+/* Teaser: width follows intrinsic image (capped); vertical extent capped taller than fixed-aspect crop */
+$pub-thumb-max-width: 520px;
+$pub-thumb-max-height: 400px;
 
 .pub-cards {
   margin: 1rem 0 2rem;
@@ -27,30 +27,35 @@ $pub-thumb-aspect-ratio: 3 / 2;
 
 .pub-card__media {
   position: relative;
-  flex: 0 0 $pub-thumb-column-width;
-  width: $pub-thumb-column-width;
-  max-width: 100%;
+  flex: 0 0 auto;
+  width: auto;
+  max-width: min(100%, $pub-thumb-max-width);
+  align-self: flex-start;
 
   @include breakpoint(max-width $medium) {
-    flex: none;
-    width: 100%;
-    max-width: min(100%, 380px);
+    max-width: 100%;
   }
 }
 
 .pub-card__thumb {
-  width: 100%;
-  aspect-ratio: $pub-thumb-aspect-ratio;
-  object-fit: cover;
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: $pub-thumb-max-height;
+  object-fit: contain;
   border-radius: 4px;
   border: 1px solid $border-color;
-  display: block;
   background: $lighter-gray;
 }
 
 .pub-card__thumb-placeholder {
-  width: 100%;
-  aspect-ratio: $pub-thumb-aspect-ratio;
+  box-sizing: border-box;
+  width: auto;
+  min-width: 200px;
+  max-width: 100%;
+  min-height: 240px;
+  height: 240px;
   border-radius: 4px;
   border: 1px solid $border-color;
   background: linear-gradient(
