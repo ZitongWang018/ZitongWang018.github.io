@@ -1,4 +1,4 @@
-# Homepage publication cards — rendered by _includes/publications-list.html
+# Publication cards — homepage & /publications/; rendered by _includes/publications-list.html
 #
 # 缩略图流程：
 # 1) 准备 teaser 图（jpg/png/webp）。左侧固定框约 460×248px；整图包含在框内（object-fit: contain）；不足处留白为白底。
