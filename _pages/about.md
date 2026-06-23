@@ -19,7 +19,7 @@ Currently, I'm working on Loop transformers and LLM-Pretraining.
 
 News 🔥
 ======
-* **[2026-06]** Started LLM Research Internship at IQuest Research, [UBIQUANT](https://www.ubiquant.com/) (九坤), developing more powerful pretraining models!
+* **[2026-06]** Started LLM Research Internship at IQuest Research, [UBIQUANT](https://www.ubiquant.com/website/ai) , developing more powerful pretraining models!
 * **[2026-04]** 1 paper accepted by ICML 2026 as Spotlight (top 2.2%)！ See you in Seoul！
 * **[2025-07]** 1 paper accepted by ACM Multimedia 2025！
 
