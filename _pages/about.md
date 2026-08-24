@@ -19,7 +19,7 @@ Currently, I'm working on Loop transformers and LLM-Pretraining.
 
 News 🔥
 ======
-* **[2026-08]** 1 paper accepted at **EMNLP 2026** (Budapest, Hungary)! Looking forward to presenting there!
+* [2026-08] 1 paper accepted at EMNLP 2026 (Budapest, Hungary)!
 * **[2026-06]** Started LLM Research Internship at [IQuest Research, UBIQUANT](https://www.ubiquant.com/website/ai) , developing more powerful pretraining models!
 * **[2026-04]** 1 paper accepted by ICML 2026 as Spotlight (top 2.2%)！ See you in Seoul！
 * **[2025-07]** 1 paper accepted by ACM Multimedia 2025！
