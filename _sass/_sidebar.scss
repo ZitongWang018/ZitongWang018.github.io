@@ -53,14 +53,14 @@
 
   /* 仅放大作者信息块：姓名、签名、地点、邮箱、WeChat、Google Scholar、Github、LinkedIn（用 rem 保证可见） */
   .author__name {
-    font-size: 1.5rem !important;
+    font-size: 1.35rem !important;
   }
   .author__bio {
-    font-size: 1.15rem !important;
+    font-size: 1rem !important;
   }
   .author__urls li,
   .author__urls a {
-    font-size: 1.15rem !important;
+    font-size: 1rem !important;
   }
 
   img {
