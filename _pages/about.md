@@ -9,13 +9,11 @@ redirect_from:
 
 About me
 ======
-I'm Zitong Wang, an undergraduate student at [Sun Yat-sen University](https://www.sysu.edu.cn/). I am currently interning at the [LUMIA Lab](https://github.com/LUMIA-Group), supervised by Prof. [Zhouhan Lin](https://hantek.github.io/). During my undergraduate studies, I am also mentored by Prof. [Weibin Wu](https://sse.sysu.edu.cn/teacher/249).
+I'm Zitong Wang, an undergraduate student at [Sun Yat-sen University](https://www.sysu.edu.cn/). I am currently a research intern at the [LAI Lab](https://qcwthu.github.io/), working with Prof. [Chengwei Qin](https://qcwthu.github.io/). Previously, I interned at the [LUMIA Lab](https://github.com/LUMIA-Group), supervised by Prof. [Zhouhan Lin](https://hantek.github.io/). During my undergraduate studies, I am also mentored by Prof. [Weibin Wu](https://sse.sysu.edu.cn/teacher/249).
 
-My research interests focus on representation learning, generative models, and efficient LLM architectures. I believe Transformers are far from enough for AGI.
+My research interests lie in LLM pretraining and model architectures, as well as autonomous agents capable of solving long-horizon tasks. I view these directions through a unified lens of scaling intelligence: pretraining and architectural innovations scale a model's internal capabilities, while agents scale intelligence externally through memory, tool use, interaction, and sustained action in complex environments.
 
-I am also interested in long video understanding and continual learning. To me, they symbolize how machines understand the world, how they express that understanding, and how people efficiently utilize these powerful machines in reality. 
-
-Currently, I'm working on Loop transformers and LLM-Pretraining.
+I am particularly interested in bridging these two forms of scaling to build more capable and general intelligent systems.
 
 News 🔥
 ======
