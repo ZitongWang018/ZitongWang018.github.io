@@ -1,0 +1,36 @@
+---
+layout: null
+permalink: /research-diary/archive/
+title: Archive
+---
+{% assign notes = site.research_diary | sort: 'date' | reverse %}
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="Zitong Wang 研究日记的文章归档。">
+  <title>文章归档 · Zitong's Notes</title>
+  {% include research-theme-init.html %}
+  <link rel="stylesheet" href="/research-diary/style.css">
+</head>
+<body>
+  {% include research-header.html active="archive" %}
+  <main class="page-wrap archive-page">
+    <div class="page-heading"><p class="intro-kicker">ALL NOTES</p><h1>文章归档<span class="accent">.</span></h1><p>按时间浏览所有记录。</p></div>
+    {% assign current_year = '' %}
+    {% for note in notes %}
+      {% assign note_year = note.date | date: '%Y' %}
+      {% if note_year != current_year %}
+        {% unless forloop.first %}</ul></section>{% endunless %}
+        <section class="archive-year" aria-labelledby="year-{{ note_year }}"><h2 id="year-{{ note_year }}">{{ note_year }}</h2><ul>
+        {% assign current_year = note_year %}
+      {% endif %}
+      <li><time datetime="{{ note.date | date: '%Y-%m-%d' }}">{{ note.date | date: '%m.%d' }}</time><a href="{{ note.url | relative_url }}">{{ note.title | escape }}</a>{% if note.category %}<span class="archive-category">{{ note.category | escape }}</span>{% endif %}</li>
+      {% if forloop.last %}</ul></section>{% endif %}
+    {% endfor %}
+  </main>
+  {% include research-footer.html %}
+</body>
+</html>

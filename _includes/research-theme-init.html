@@ -1,0 +1,6 @@
+<script>
+  try {
+    var researchTheme = localStorage.getItem('research-diary-theme');
+    if (researchTheme === 'light' || researchTheme === 'dark') document.documentElement.dataset.theme = researchTheme;
+  } catch (error) { /* The system preference remains available without local storage. */ }
+</script>

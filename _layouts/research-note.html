@@ -3,29 +3,26 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f2eee5">
+  <meta name="color-scheme" content="light dark">
   <meta name="description" content="{{ page.summary | default: page.title | escape }}">
-  <title>{{ page.title | escape }} — 研究日记</title>
+  <title>{{ page.title | escape }} · Zitong's Notes</title>
+  {% include research-theme-init.html %}
   <link rel="stylesheet" href="/research-diary/style.css">
 </head>
 <body>
-  <div class="site-shell note-shell">
-    <header class="site-header">
-      <a class="wordmark" href="/research-diary/" aria-label="研究日记首页"><span class="wordmark-symbol">✳</span> ZW<span class="wordmark-dot">.</span> FIELD NOTES</a>
-      <a class="back-link" href="/research-diary/">全部记录 <span aria-hidden="true">↗</span></a>
-    </header>
-    <main>
-      <article class="note-article">
-        <a class="note-back" href="/research-diary/">← 返回目录</a>
-        <div class="note-masthead"><p class="eyebrow">RESEARCH DIARY <span class="entry-divider">/</span> {{ page.category | default: '记录' }}</p><time datetime="{{ page.date | date: '%Y-%m-%d' }}">{{ page.date | date: '%Y.%m.%d' }}</time></div>
+  {% include research-header.html %}
+  <main class="page-wrap article-page">
+    <article>
+      <header class="article-header">
+        <a class="return-link" href="/research-diary/">← 返回文章列表</a>
         <h1>{{ page.title | escape }}</h1>
-        {% if page.summary %}<p class="note-deck">{{ page.summary | escape }}</p>{% endif %}
-        <div class="note-content">{{ content }}</div>
-        <div class="note-end" aria-hidden="true">✳</div>
-      </article>
-      <nav class="note-bottom" aria-label="日记导航"><a href="/research-diary/">← 所有记录</a><a href="/">个人主页 ↗</a></nav>
-    </main>
-    <footer class="site-footer"><span>© {{ 'now' | date: '%Y' }} ZITONG WANG</span><span>MADE FOR THINKING OUT LOUD</span><a href="/">HOME ↗</a></footer>
-  </div>
+        <p class="post-meta"><time datetime="{{ page.date | date: '%Y-%m-%d' }}">{{ page.date | date: '%Y年%m月%d日' }}</time>{% if page.category %}<span aria-hidden="true">·</span><span>{{ page.category | escape }}</span>{% endif %}</p>
+        {% if page.summary %}<p class="article-summary">{{ page.summary | escape }}</p>{% endif %}
+      </header>
+      <div class="article-content">{{ content }}</div>
+    </article>
+    <nav class="article-bottom" aria-label="文章导航"><a href="/research-diary/">← 全部文章</a><a href="/research-diary/archive/">文章归档 →</a></nav>
+  </main>
+  {% include research-footer.html %}
 </body>
 </html>

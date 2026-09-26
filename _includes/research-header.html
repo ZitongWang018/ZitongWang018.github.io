@@ -1,0 +1,11 @@
+<header class="site-header">
+  <div class="header-inner">
+    <a class="site-name" href="/research-diary/">Zitong's Notes<span class="site-name-dot">.</span></a>
+    <nav class="site-nav" aria-label="日记导航">
+      <a href="/research-diary/"{% if include.active == 'posts' %} aria-current="page"{% endif %}>文章</a>
+      <a href="/research-diary/archive/"{% if include.active == 'archive' %} aria-current="page"{% endif %}>归档</a>
+      <a class="personal-home" href="/" aria-label="个人主页"><span class="home-label">个人主页 </span>↗</a>
+      <button class="theme-toggle" type="button" aria-label="切换亮暗主题" title="切换亮暗主题"><span aria-hidden="true">◐</span></button>
+    </nav>
+  </div>
+</header>
