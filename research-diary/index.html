@@ -1,0 +1,65 @@
+---
+layout: null
+permalink: /research-diary/
+title: Research Diary
+---
+{% assign notes = site.research_diary | sort: 'date' | reverse %}
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f2eee5">
+  <meta name="description" content="Zitong Wang 的研究日记：问题、实验、阅读与想法。">
+  <title>研究日记 / Research Diary — Zitong Wang</title>
+  <link rel="stylesheet" href="/research-diary/style.css">
+</head>
+<body>
+  <div class="site-shell">
+    <header class="site-header">
+      <a class="wordmark" href="/research-diary/" aria-label="研究日记首页"><span class="wordmark-symbol">✳</span> ZW<span class="wordmark-dot">.</span> FIELD NOTES</a>
+      <a class="back-link" href="/">返回个人主页 <span aria-hidden="true">↗</span></a>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="diary-title">
+        <div class="hero-side"><span>AN ONGOING RECORD</span><span>始于 2026</span></div>
+        <div class="hero-main">
+          <p class="eyebrow"><span class="eyebrow-line"></span> 一份持续生长的研究记录</p>
+          <h1 id="diary-title">研究<span>日记</span><span class="title-mark">*</span></h1>
+          <p class="hero-english">RESEARCH DIARY</p>
+          <p class="hero-description">写下问题，也写下暂时没有答案的部分。<br>关于阅读、实验、偏离预期的结果，和下一步。</p>
+          <div class="hero-meta"><span>NOTES BY ZITONG WANG</span><span>01 — ∞</span></div>
+        </div>
+        <div class="hero-stamp" aria-hidden="true"><span>WORK<br>IN<br>PROGRESS</span><small>↗</small></div>
+      </section>
+
+      <section class="entries" aria-labelledby="entries-title">
+        <div class="section-heading">
+          <div><p class="eyebrow">THE LOGBOOK</p><h2 id="entries-title">最近记录<span class="heading-punctuation">.</span></h2></div>
+          <span class="entry-count">{{ notes.size }} ENTRIES</span>
+        </div>
+        {% if notes.size > 0 %}
+        <ol class="entry-list">
+          {% for note in notes %}
+          <li>
+            <a class="entry" href="{{ note.url | relative_url }}">
+              <span class="entry-index">{{ forloop.index | prepend: '0' | slice: -2, 2 }}</span>
+              <span class="entry-copy"><span class="entry-date">{{ note.date | date: '%Y.%m.%d' }}{% if note.category %} <span class="entry-divider">/</span> {{ note.category }}{% endif %}</span><strong>{{ note.title | escape }}</strong>{% if note.summary %}<span class="entry-summary">{{ note.summary | escape }}</span>{% endif %}</span>
+              <span class="entry-arrow" aria-hidden="true">↗</span>
+            </a>
+          </li>
+          {% endfor %}
+        </ol>
+        {% else %}
+        <div class="empty-state"><span class="empty-symbol">✳</span><p>第一页，等待落笔。</p><small>THE FIRST NOTE IS YET TO COME.</small></div>
+        {% endif %}
+      </section>
+
+      <aside class="colophon"><span class="colophon-mark">*</span><p>想法可以先不完整。<br>记录，是让它们继续生长的一种方式。</p><span class="colophon-label">MARGINALIA / 边注</span></aside>
+    </main>
+
+    <footer class="site-footer"><span>© {{ 'now' | date: '%Y' }} ZITONG WANG</span><span>MADE FOR THINKING OUT LOUD</span><a href="/">HOME ↗</a></footer>
+  </div>
+</body>
+</html>

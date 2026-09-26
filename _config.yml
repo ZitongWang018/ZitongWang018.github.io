@@ -213,6 +213,9 @@ kramdown:
 
 # These settings control the types of collections used by the template
 collections:
+  research_diary:
+    output: true
+    permalink: /research-diary/:name/
   teaching:
     output: true
     permalink: /:collection/:path/

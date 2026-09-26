@@ -41,3 +41,5 @@ I love cooking great food🥩, listening to jazz music🎵 and discussing the fu
 <div style="width: 100%; max-width: 100%; margin-top: 2em; overflow: hidden;">
   <script type="text/javascript" id="mapmyvisitors" src="//mapmyvisitors.com/map.js?d=JHwSe0hpWslgMZ3XDNF2Scw8_vYLRfXvMykkTfRYY48&amp;cl=ffffff&amp;w=a"></script>
 </div>
+
+<p style="margin-top: 2.5rem; font-size: 0.78rem; opacity: 0.58;"><a href="/research-diary/" aria-label="Open research diary">↗ field notes</a></p>
