@@ -1,0 +1,36 @@
+---
+layout: null
+permalink: /research-diary/tags/
+title: Tags
+---
+{% assign tags_string = '' %}
+{% for note in site.research_diary %}
+  {% for tag in note.tags %}{% assign tags_string = tags_string | append: tag | append: '|' %}{% endfor %}
+  {% if note.category %}{% assign tags_string = tags_string | append: note.category | append: '|' %}{% endif %}
+{% endfor %}
+{% assign tags = tags_string | split: '|' | uniq | sort %}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="Browse Zitong's Notes by topic.">
+  <title>Tags · Zitong's Notes</title>
+  {% include research-theme-init.html %}
+  <link rel="stylesheet" href="/research-diary/style.css">
+</head>
+<body>
+  {% include research-header.html active="tags" %}
+  <main class="page-wrap subpage">
+    <h1>Tags</h1>
+    {% if tags_string != '' %}
+    <nav class="tag-cloud" aria-label="Topics">{% for tag in tags %}<a href="#tag-{{ forloop.index }}">{{ tag | escape }}</a>{% endfor %}</nav>
+    {% for tag in tags %}
+    <section class="tag-section" id="tag-{{ forloop.index }}"><h2>{{ tag | escape }}</h2><ul>{% for note in site.research_diary %}{% if note.tags contains tag or note.category == tag %}<li><a href="{{ note.url | relative_url }}">{{ note.title | escape }}</a></li>{% endif %}{% endfor %}</ul></section>
+    {% endfor %}
+    {% else %}<div class="empty-card">No tags yet.</div>{% endif %}
+  </main>
+  {% include research-footer.html %}
+</body>
+</html>

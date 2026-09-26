@@ -1,0 +1,37 @@
+---
+layout: null
+permalink: /research-diary/search/
+title: Search
+---
+{% assign notes = site.research_diary | sort: 'date' | reverse %}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="Search Zitong's Notes.">
+  <title>Search · Zitong's Notes</title>
+  {% include research-theme-init.html %}
+  <link rel="stylesheet" href="/research-diary/style.css">
+</head>
+<body>
+  {% include research-header.html active="search" %}
+  <main class="page-wrap subpage">
+    <h1>Search</h1>
+    <label class="visually-hidden" for="note-search">Search posts</label>
+    <input id="note-search" class="search-input" type="search" placeholder="Search posts" autocomplete="off">
+    {% if notes.size > 0 %}
+    <p id="search-status" class="search-status" aria-live="polite">{{ notes.size }} posts</p>
+    <ul class="search-results">
+      {% for note in notes %}
+      {% assign description = note.summary | default: note.excerpt | strip_html | strip_newlines | truncate: 180 %}
+      <li data-search="{{ note.title | escape }} {{ description | escape }} {{ note.category | escape }}"><a href="{{ note.url | relative_url }}">{{ note.title | escape }}</a><span>{{ note.date | date: '%B %-d, %Y' }}</span></li>
+      {% endfor %}
+    </ul>
+    {% else %}<div class="empty-card">No posts yet.</div>{% endif %}
+  </main>
+  {% include research-footer.html %}
+  <script src="/research-diary/search.js" defer></script>
+</body>
+</html>

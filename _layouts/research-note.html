@@ -10,18 +10,18 @@
   <link rel="stylesheet" href="/research-diary/style.css">
 </head>
 <body>
-  {% include research-header.html %}
+  {% include research-header.html active="posts" %}
   <main class="page-wrap article-page">
     <article>
       <header class="article-header">
-        <a class="return-link" href="/research-diary/">← 返回文章列表</a>
+        <a class="return-link" href="/research-diary/">← Posts</a>
         <h1>{{ page.title | escape }}</h1>
-        <p class="post-meta"><time datetime="{{ page.date | date: '%Y-%m-%d' }}">{{ page.date | date: '%Y年%m月%d日' }}</time>{% if page.category %}<span aria-hidden="true">·</span><span>{{ page.category | escape }}</span>{% endif %}</p>
+        <p class="post-meta">Date: <time datetime="{{ page.date | date: '%Y-%m-%d' }}">{{ page.date | date: '%B %-d, %Y' }}</time>{% if page.reading_time %} <span aria-hidden="true">|</span> Estimated Reading Time: {{ page.reading_time }} min{% endif %} <span aria-hidden="true">|</span> Author: Zitong Wang{% if page.category %} <span aria-hidden="true">|</span> {{ page.category | escape }}{% endif %}</p>
         {% if page.summary %}<p class="article-summary">{{ page.summary | escape }}</p>{% endif %}
       </header>
       <div class="article-content">{{ content }}</div>
     </article>
-    <nav class="article-bottom" aria-label="文章导航"><a href="/research-diary/">← 全部文章</a><a href="/research-diary/archive/">文章归档 →</a></nav>
+    <nav class="article-bottom" aria-label="文章导航"><a href="/research-diary/">← Posts</a><a href="/research-diary/archive/">Archive →</a></nav>
   </main>
   {% include research-footer.html %}
 </body>

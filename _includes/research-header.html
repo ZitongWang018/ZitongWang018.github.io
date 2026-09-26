@@ -1,11 +1,19 @@
 <header class="site-header">
   <div class="header-inner">
-    <a class="site-name" href="/research-diary/">Zitong's Notes<span class="site-name-dot">.</span></a>
+    <div class="brand-group">
+      <a class="site-name" href="/research-diary/">Zitong's Notes</a>
+      <button class="theme-toggle" type="button" aria-label="切换亮暗主题" title="切换亮暗主题">
+        <svg class="icon-sun" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/></svg>
+        <svg class="icon-moon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M20.2 15.6A8.7 8.7 0 0 1 8.4 3.8 8.7 8.7 0 1 0 20.2 15.6Z"/></svg>
+      </button>
+      <span class="brand-divider" aria-hidden="true">|</span>
+    </div>
     <nav class="site-nav" aria-label="日记导航">
-      <a href="/research-diary/"{% if include.active == 'posts' %} aria-current="page"{% endif %}>文章</a>
-      <a href="/research-diary/archive/"{% if include.active == 'archive' %} aria-current="page"{% endif %}>归档</a>
-      <a class="personal-home" href="/" aria-label="个人主页"><span class="home-label">个人主页 </span>↗</a>
-      <button class="theme-toggle" type="button" aria-label="切换亮暗主题" title="切换亮暗主题"><span aria-hidden="true">◐</span></button>
+      <a href="/research-diary/"{% if include.active == 'posts' %} aria-current="page"{% endif %}>Posts</a>
+      <a href="/research-diary/archive/"{% if include.active == 'archive' %} aria-current="page"{% endif %}>Archive</a>
+      <a href="/research-diary/search/"{% if include.active == 'search' %} aria-current="page"{% endif %}>Search</a>
+      <a href="/research-diary/tags/"{% if include.active == 'tags' %} aria-current="page"{% endif %}>Tags</a>
+      <a href="/research-diary/faq/"{% if include.active == 'faq' %} aria-current="page"{% endif %}>FAQ</a>
     </nav>
   </div>
 </header>

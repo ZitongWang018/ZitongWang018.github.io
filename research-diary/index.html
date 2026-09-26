@@ -5,21 +5,29 @@ title: Research Diary
 ---
 {% assign notes = site.research_diary | sort: 'date' | reverse %}
 <!doctype html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="light dark">
-  <meta name="description" content="Zitong Wang 的研究日记。">
-  <title>研究日记 · Zitong's Notes</title>
+  <meta name="description" content="Zitong Wang's research notes and blog.">
+  <title>Zitong's Notes</title>
   {% include research-theme-init.html %}
   <link rel="stylesheet" href="/research-diary/style.css">
 </head>
 <body>
   {% include research-header.html active="posts" %}
   <main class="page-wrap">
-    <section class="intro" aria-labelledby="page-title">
-      <h1 id="page-title">研究日记<span class="accent">.</span></h1>
+    <section class="home-intro" aria-labelledby="page-title">
+      <h1 id="page-title"><span class="wave" aria-hidden="true">👋</span> Welcome to Zitong's Notes</h1>
+      <p>Hi, this is Zitong. I'm documenting my research notes in this blog.</p>
+      <div class="social-links" aria-label="更多链接">
+        <a href="/" aria-label="个人主页" title="个人主页"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.1 0l2.5-2.5a5 5 0 0 0-7.1-7.1L11 4.9"/><path d="M14 11a5 5 0 0 0-7.1 0l-2.5 2.5a5 5 0 1 0 7.1 7.1L13 19.1"/></svg></a>
+        <a href="/research-diary/feed.xml" aria-label="RSS 订阅" title="RSS 订阅"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="5" cy="19" r="1" fill="currentColor" stroke="none"/><path d="M4 11a9 9 0 0 1 9 9M4 4a16 16 0 0 1 16 16"/></svg></a>
+        <a href="https://github.com/ZitongWang018" aria-label="GitHub" title="GitHub"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 20c-4.3 1.2-4.3-2-6-2.5M16 20v-3.1a2.8 2.8 0 0 0-.8-2.2c2.7-.3 5.5-1.3 5.5-6a4.7 4.7 0 0 0-1.3-3.3 4.3 4.3 0 0 0-.1-3.3s-1 0-3.2 1.7a11 11 0 0 0-8.2 0C5.7 2.1 4.7 2.1 4.7 2.1a4.3 4.3 0 0 0-.1 3.3 4.7 4.7 0 0 0-1.3 3.3c0 4.7 2.8 5.7 5.5 6A2.8 2.8 0 0 0 8 16.9V20"/><path d="M8 20h8"/></svg></a>
+        <a href="mailto:{{ site.author.email }}" aria-label="Email" title="Email"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="4.5" width="19" height="15" rx="2"/><path d="m3.5 6 8.5 7 8.5-7"/></svg></a>
+        <a href="{{ site.author.linkedin }}" aria-label="LinkedIn" title="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M5 8.5a1.8 1.8 0 1 0 0-3.6 1.8 1.8 0 0 0 0 3.6ZM3.5 10h3v10h-3V10Zm5 0h2.9v1.4c.4-.8 1.4-1.7 3-1.7 3.2 0 3.8 2 3.8 4.6V20h-3v-5.1c0-1.2 0-2.7-1.7-2.7s-2 1.3-2 2.6V20h-3V10Z"/></svg></a>
+      </div>
     </section>
 
     <section class="post-index" aria-label="文章列表">
@@ -28,16 +36,16 @@ title: Research Diary
         {% for note in notes %}
         {% assign description = note.summary | default: note.excerpt | strip_html | strip_newlines | truncate: 180 %}
         <li class="post-item">
-          <article>
-            <h3><a href="{{ note.url | relative_url }}">{{ note.title | escape }}</a></h3>
+          <article class="post-card">
+            <h2><a href="{{ note.url | relative_url }}">{{ note.title | escape }}</a></h2>
             <p class="post-summary">{{ description | escape }}</p>
-            <p class="post-meta"><time datetime="{{ note.date | date: '%Y-%m-%d' }}">{{ note.date | date: '%Y年%m月%d日' }}</time>{% if note.category %}<span aria-hidden="true">·</span><span>{{ note.category | escape }}</span>{% endif %}</p>
+            <p class="post-meta">Date: <time datetime="{{ note.date | date: '%Y-%m-%d' }}">{{ note.date | date: '%B %-d, %Y' }}</time>{% if note.reading_time %} <span aria-hidden="true">|</span> Estimated Reading Time: {{ note.reading_time }} min{% endif %} <span aria-hidden="true">|</span> Author: Zitong Wang{% if note.category %} <span aria-hidden="true">|</span> {{ note.category | escape }}{% endif %}</p>
           </article>
         </li>
         {% endfor %}
       </ol>
       {% else %}
-      <p class="empty-state">暂无文章</p>
+      <div class="empty-card">No posts yet.</div>
       {% endif %}
     </section>
   </main>

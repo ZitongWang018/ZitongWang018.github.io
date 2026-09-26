@@ -5,21 +5,21 @@ title: Archive
 ---
 {% assign notes = site.research_diary | sort: 'date' | reverse %}
 <!doctype html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="light dark">
-  <meta name="description" content="Zitong Wang 研究日记的文章归档。">
-  <title>文章归档 · Zitong's Notes</title>
+  <meta name="description" content="Archive of Zitong's Notes.">
+  <title>Archive · Zitong's Notes</title>
   {% include research-theme-init.html %}
   <link rel="stylesheet" href="/research-diary/style.css">
 </head>
 <body>
   {% include research-header.html active="archive" %}
   <main class="page-wrap archive-page">
-    <div class="page-heading"><h1>归档<span class="accent">.</span></h1></div>
-    {% if notes.size == 0 %}<p class="empty-state">暂无文章</p>{% endif %}
+    <div class="page-heading"><h1>Archive</h1></div>
+    {% if notes.size == 0 %}<div class="empty-card">No posts yet.</div>{% endif %}
     {% assign current_year = '' %}
     {% for note in notes %}
       {% assign note_year = note.date | date: '%Y' %}

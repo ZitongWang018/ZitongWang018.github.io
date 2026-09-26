@@ -1,0 +1,18 @@
+---
+layout: null
+permalink: /research-diary/feed.xml
+---
+{% assign notes = site.research_diary | sort: 'date' | reverse %}<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"><channel>
+<title>Zitong's Notes</title>
+<link>{{ site.url }}/research-diary/</link>
+<description>Zitong Wang's research notes.</description>
+<language>en</language>
+{% for note in notes %}<item>
+<title>{{ note.title | xml_escape }}</title>
+<link>{{ site.url }}{{ note.url }}</link>
+<guid>{{ site.url }}{{ note.url }}</guid>
+<pubDate>{{ note.date | date: '%a, %d %b %Y %H:%M:%S %z' }}</pubDate>
+<description>{{ note.summary | default: note.excerpt | strip_html | xml_escape }}</description>
+</item>{% endfor %}
+</channel></rss>
