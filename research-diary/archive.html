@@ -18,7 +18,8 @@ title: Archive
 <body>
   {% include research-header.html active="archive" %}
   <main class="page-wrap archive-page">
-    <div class="page-heading"><p class="intro-kicker">ALL NOTES</p><h1>文章归档<span class="accent">.</span></h1><p>按时间浏览所有记录。</p></div>
+    <div class="page-heading"><h1>归档<span class="accent">.</span></h1></div>
+    {% if notes.size == 0 %}<p class="empty-state">暂无文章</p>{% endif %}
     {% assign current_year = '' %}
     {% for note in notes %}
       {% assign note_year = note.date | date: '%Y' %}

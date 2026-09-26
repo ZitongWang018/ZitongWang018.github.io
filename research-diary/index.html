@@ -10,7 +10,7 @@ title: Research Diary
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="light dark">
-  <meta name="description" content="Zitong Wang 的研究日记：阅读、实验与持续更新的想法。">
+  <meta name="description" content="Zitong Wang 的研究日记。">
   <title>研究日记 · Zitong's Notes</title>
   {% include research-theme-init.html %}
   <link rel="stylesheet" href="/research-diary/style.css">
@@ -19,13 +19,10 @@ title: Research Diary
   {% include research-header.html active="posts" %}
   <main class="page-wrap">
     <section class="intro" aria-labelledby="page-title">
-      <p class="intro-kicker">RESEARCH DIARY / 研究手记</p>
       <h1 id="page-title">研究日记<span class="accent">.</span></h1>
-      <p>记录阅读、实验，以及尚未成为结论的想法。</p>
     </section>
 
-    <section class="post-index" aria-labelledby="posts-title">
-      <div class="section-title"><h2 id="posts-title">文章</h2><a href="/research-diary/archive/">查看归档 →</a></div>
+    <section class="post-index" aria-label="文章列表">
       {% if notes.size > 0 %}
       <ol class="post-list">
         {% for note in notes %}
@@ -40,7 +37,7 @@ title: Research Diary
         {% endfor %}
       </ol>
       {% else %}
-      <p class="empty-state">第一篇日记，等待落笔。</p>
+      <p class="empty-state">暂无文章</p>
       {% endif %}
     </section>
   </main>
