@@ -4,7 +4,7 @@ permalink: /research-diary/write/
 title: Write
 ---
 <!doctype html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,7 +12,7 @@ title: Write
   <meta name="robots" content="noindex,nofollow">
   <meta name="referrer" content="no-referrer">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data: blob:; connect-src https://api.github.com; object-src 'none'; base-uri 'none'; form-action 'none'">
-  <title>Write · Zitong's Notes</title>
+  <title>Writing · Zitong's Notes</title>
   <script src="/research-diary/theme-init.js"></script>
   <link rel="stylesheet" href="/research-diary/style.css">
   <link rel="stylesheet" href="/research-diary/write/style.css">
@@ -20,44 +20,43 @@ title: Write
 <body>
   {% include research-header.html %}
   <main class="write-wrap">
-    <div class="write-heading"><div><p class="eyebrow">ZITONG'S NOTES</p><h1>在线写作</h1></div><a href="/research-diary/">查看日记 ↗</a></div>
+    <div class="write-heading"><h1>Writing</h1><a href="/research-diary/">Back to posts ↗</a></div>
 
     <section class="connection-panel" aria-labelledby="connection-heading">
-      <div class="connection-title"><h2 id="connection-heading">连接 GitHub</h2><span id="connection-state" class="connection-state">未连接</span></div>
-      <p>用仅授权 <code>ZitongWang018/ZitongWang018.github.io</code> 的令牌保存文章。令牌只在当前页面内存中使用，关闭页面后需要重新输入。</p>
-      <div class="connection-row"><label class="visually-hidden" for="github-token">GitHub fine-grained token</label><input id="github-token" type="password" placeholder="粘贴 GitHub fine-grained token" autocomplete="off" spellcheck="false"><button id="connect-button" type="button">连接</button><button id="disconnect-button" type="button" hidden>断开</button></div>
-      <details class="token-help"><summary>第一次使用？创建仅用于日记的令牌</summary><ol><li>在 GitHub 中<a href="https://github.com/settings/personal-access-tokens/new?name=Research-Diary-Writer&amp;target_name=ZitongWang018&amp;contents=write&amp;expires_in=90" target="_blank" rel="noopener noreferrer">创建 fine-grained token ↗</a>。</li><li>Repository access 选择 <strong>Only select repositories</strong>，只选 <code>ZitongWang018.github.io</code>；Repository permissions 中设 <strong>Contents: Read and write</strong>。</li><li>生成后复制令牌，粘贴到上方。请不要把令牌发给任何人。</li></ol></details>
+      <div class="connection-title"><h2 id="connection-heading">GitHub</h2><span id="connection-state" class="connection-state">Disconnected</span></div>
+      <div class="connection-row"><label class="visually-hidden" for="github-token">GitHub token</label><input id="github-token" type="password" placeholder="GitHub token" autocomplete="off" spellcheck="false"><button id="connect-button" type="button">Connect</button><button id="disconnect-button" type="button" hidden>Disconnect</button></div>
+      <details class="token-help"><summary>Get a token</summary><p><a href="https://github.com/settings/personal-access-tokens/new?name=Research-Diary-Writer&amp;target_name=ZitongWang018&amp;contents=write&amp;expires_in=90" target="_blank" rel="noopener noreferrer">Create a fine-grained token ↗</a> for <code>ZitongWang018.github.io</code> with <strong>Contents: Read and write</strong>. The token stays in this tab.</p></details>
     </section>
 
     <section class="editor-panel" aria-labelledby="editor-heading">
-      <div class="editor-topline"><h2 id="editor-heading">文章</h2><div class="existing-control"><label for="existing-posts">打开已有文章</label><select id="existing-posts" disabled><option value="">新文章</option></select><button id="new-post" type="button">新建</button></div></div>
+      <div class="editor-topline"><h2 id="editor-heading">Post</h2><div class="existing-control"><label for="existing-posts">Open</label><select id="existing-posts" disabled><option value="">New post</option></select><button id="new-post" type="button">New</button></div></div>
       <form id="entry-form" novalidate>
         <div class="entry-fields">
-          <label class="field field-title">标题<input id="entry-title" type="text" maxlength="160" placeholder="今天在想什么？" required></label>
-          <label class="field">日期<input id="entry-date" type="date" required></label>
-          <label class="field">网址短名 <small>可留空，自动生成</small><input id="entry-slug" type="text" maxlength="80" placeholder="e.g. experiment-notes" spellcheck="false"></label>
-          <label class="field field-wide">摘要 <small>可选，显示在文章列表</small><input id="entry-summary" type="text" maxlength="320" placeholder="一句话概括"></label>
-          <label class="field">分类 <small>可选</small><input id="entry-category" type="text" maxlength="60" placeholder="阅读 / 实验 / 想法"></label>
-          <label class="field">标签 <small>用逗号分隔</small><input id="entry-tags" type="text" placeholder="LLM, agents"></label>
-          <label class="field">预计阅读分钟数 <small>可选</small><input id="entry-reading-time" type="number" min="1" max="999" step="1" placeholder="例如 3"></label>
+          <label class="field field-title">Title<input id="entry-title" type="text" maxlength="160" required></label>
+          <label class="field">Date<input id="entry-date" type="date" required></label>
+          <label class="field">Slug<input id="entry-slug" type="text" maxlength="80" spellcheck="false"></label>
+          <label class="field field-wide">Summary<input id="entry-summary" type="text" maxlength="320"></label>
+          <label class="field">Category<input id="entry-category" type="text" maxlength="60"></label>
+          <label class="field">Tags<input id="entry-tags" type="text" placeholder="LLM, agents"></label>
+          <label class="field">Reading time <small>min</small><input id="entry-reading-time" type="number" min="1" max="999" step="1"></label>
         </div>
 
         <div class="writing-columns">
           <div class="writing-column">
-            <div class="column-heading"><h3>正文 <span>Markdown</span></h3><button id="upload-image" class="text-button" type="button">插入图片</button><input id="image-file" type="file" accept="image/png,image/jpeg,image/webp,image/gif" hidden></div>
-            <div class="format-toolbar" role="toolbar" aria-label="格式工具">
-              <button type="button" data-format="heading" title="二级标题">H2</button>
-              <button type="button" data-format="bold" title="加粗"><strong>B</strong></button>
-              <button type="button" data-format="italic" title="斜体"><em>I</em></button>
-              <button type="button" data-format="list" title="列表">• List</button>
-              <button type="button" data-format="link" title="链接">Link</button>
-              <button type="button" data-format="code" title="代码块">Code</button>
+            <div class="column-heading"><h3>Markdown</h3><button id="upload-image" class="text-button" type="button">Image</button><input id="image-file" type="file" accept="image/png,image/jpeg,image/webp,image/gif" hidden></div>
+            <div class="format-toolbar" role="toolbar" aria-label="Formatting">
+              <button type="button" data-format="heading" title="Heading">H2</button>
+              <button type="button" data-format="bold" title="Bold"><strong>B</strong></button>
+              <button type="button" data-format="italic" title="Italic"><em>I</em></button>
+              <button type="button" data-format="list" title="List">• List</button>
+              <button type="button" data-format="link" title="Link">Link</button>
+              <button type="button" data-format="code" title="Code block">Code</button>
             </div>
-            <label class="visually-hidden" for="entry-body">文章正文</label><textarea id="entry-body" rows="24" placeholder="从这里开始写…" spellcheck="true"></textarea>
+            <label class="visually-hidden" for="entry-body">Post body</label><textarea id="entry-body" rows="24" placeholder="Start writing…" spellcheck="true"></textarea>
           </div>
-          <div class="writing-column preview-column"><div class="column-heading"><h3>预览</h3><span>保存后可能稍有排版差异</span></div><article class="preview-paper"><h2 id="preview-title">文章标题</h2><p id="preview-meta" class="post-meta"></p><div id="preview-body" class="article-content"></div></article></div>
+          <div class="writing-column preview-column"><div class="column-heading"><h3>Preview</h3></div><article class="preview-paper"><h2 id="preview-title">Untitled</h2><p id="preview-meta" class="post-meta"></p><div id="preview-body" class="article-content"></div></article></div>
         </div>
-        <div class="editor-bottom"><p>保存后文章会公开，GitHub Pages 通常需要片刻更新。</p><button id="save-entry" type="submit">保存并发布</button></div>
+        <div class="editor-bottom"><button id="save-entry" type="submit">Save</button></div>
       </form>
       <p id="editor-status" class="editor-status" role="status" aria-live="polite"></p>
       <a id="published-link" class="published-link" hidden></a>

@@ -55,7 +55,7 @@
 
   async function request(path, options, credential) {
     var activeToken = credential || token;
-    if (!activeToken) throw new Error('请先连接 GitHub。');
+    if (!activeToken) throw new Error('Connect GitHub first.');
     var response;
     try {
       response = await fetch('https://api.github.com/repos/' + owner + '/' + repo + path, {
@@ -71,13 +71,13 @@
         cache: 'no-store'
       });
     } catch (error) {
-      throw new Error('无法连接 GitHub。请检查网络后重试。');
+      throw new Error('Could not reach GitHub.');
     }
     var data = await response.json().catch(function () { return {}; });
     if (!response.ok) {
-      if (response.status === 401 || response.status === 403) throw new Error('令牌无效、已过期，或没有此仓库的 Contents 写入权限。');
-      if (response.status === 409 || response.status === 422) throw new Error('保存冲突：同名文件已存在，或文章在其他地方被修改。请重新打开文章后再保存。');
-      throw new Error('GitHub 返回 ' + response.status + '：' + (data.message || '请稍后重试。'));
+      if (response.status === 401 || response.status === 403) throw new Error('Check your token and repository access.');
+      if (response.status === 409 || response.status === 422) throw new Error('Save conflict. Reopen the post and try again.');
+      throw new Error('GitHub ' + response.status + ': ' + (data.message || 'Try again.'));
     }
     return data;
   }
@@ -108,9 +108,9 @@
 
   function parseFile(source) {
     var match = source.match(/^---\s*\r?\n([\s\S]*?)\r?\n---\s*\r?\n?/);
-    if (!match) throw new Error('这篇文章缺少 YAML 开头信息，请在仓库中检查文件。');
+    if (!match) throw new Error('Missing post front matter.');
     var meta = window.jsyaml.load(match[1]) || {};
-    if (typeof meta !== 'object' || Array.isArray(meta)) throw new Error('文章的 YAML 开头信息无法识别。');
+    if (typeof meta !== 'object' || Array.isArray(meta)) throw new Error('Invalid post front matter.');
     return { meta: meta, body: source.slice(match[0].length).replace(/^\r?\n/, '') };
   }
 
@@ -138,7 +138,7 @@
   }
 
   function renderPreview() {
-    byId('preview-title').textContent = titleInput.value.trim() || '文章标题';
+    byId('preview-title').textContent = titleInput.value.trim() || 'Untitled';
     byId('preview-meta').textContent = dateInput.value || '';
     if (!window.marked || !window.DOMPurify) return;
     var rawHtml = window.marked.parse(bodyInput.value || '', { gfm: true, breaks: true });
@@ -171,9 +171,9 @@
 
   async function listPosts(credential) {
     var files = await request('/contents/' + collection + '?ref=' + branch, null, credential);
-    if (!Array.isArray(files)) throw new Error('无法读取日记目录。');
+    if (!Array.isArray(files)) throw new Error('Could not load posts.');
     var selected = currentPath || '';
-    select.replaceChildren(new Option('新文章', ''));
+    select.replaceChildren(new Option('New post', ''));
     files.filter(function (file) { return file.type === 'file' && /\.md$/i.test(file.name); })
       .sort(function (a, b) { return b.name.localeCompare(a.name); })
       .forEach(function (file) { select.add(new Option(file.name.replace(/\.md$/i, ''), file.path)); });
@@ -183,9 +183,9 @@
 
   async function connect() {
     var candidate = tokenInput.value.trim();
-    if (!candidate) { message('请先输入 GitHub 令牌。', 'error'); tokenInput.focus(); return; }
+    if (!candidate) { message('Enter a GitHub token.', 'error'); tokenInput.focus(); return; }
     setBusy(true);
-    message('正在检查仓库权限…');
+    message('Connecting…');
     try {
       await listPosts(candidate);
       token = candidate;
@@ -193,9 +193,9 @@
       tokenInput.hidden = true;
       connectButton.hidden = true;
       disconnectButton.hidden = false;
-      connectionState.textContent = '已连接';
+      connectionState.textContent = 'Connected';
       connectionState.classList.add('connected');
-      message('已连接。可以新建或打开文章。', 'success');
+      message('Connected.', 'success');
     } catch (error) {
       message(error.message, 'error');
     } finally {
@@ -206,10 +206,10 @@
   async function openPost(path) {
     if (!path) { resetForm(); return; }
     setBusy(true);
-    message('正在打开文章…');
+    message('Opening…');
     try {
       var file = await request('/contents/' + safePath(path) + '?ref=' + branch);
-      if (file.encoding !== 'base64' || !file.content) throw new Error('文章太大，无法在此编辑。');
+      if (file.encoding !== 'base64' || !file.content) throw new Error('Post is too large to edit here.');
       var parsed = parseFile(decodeBase64(file.content));
       currentPath = path;
       currentSha = file.sha;
@@ -225,7 +225,7 @@
       bodyInput.value = parsed.body.trimEnd();
       dirty = false;
       publishedLink.hidden = true;
-      message('已打开 ' + file.name, 'success');
+      message('Opened ' + file.name, 'success');
       renderPreview();
     } catch (error) {
       select.value = currentPath || '';
@@ -238,10 +238,10 @@
   async function save(event) {
     event.preventDefault();
     if (busy) return;
-    if (!token) { message('请先连接 GitHub，再保存文章。', 'error'); tokenInput.focus(); return; }
-    if (!titleInput.value.trim()) { message('请填写标题。', 'error'); titleInput.focus(); return; }
-    if (!dateInput.value) { message('请选择日期。', 'error'); dateInput.focus(); return; }
-    if (!bodyInput.value.trim()) { message('请写一点正文。', 'error'); bodyInput.focus(); return; }
+    if (!token) { message('Connect GitHub first.', 'error'); tokenInput.focus(); return; }
+    if (!titleInput.value.trim()) { message('Add a title.', 'error'); titleInput.focus(); return; }
+    if (!dateInput.value) { message('Choose a date.', 'error'); dateInput.focus(); return; }
+    if (!bodyInput.value.trim()) { message('Add some text.', 'error'); bodyInput.focus(); return; }
 
     var slug = slugify(slugInput.value || titleInput.value) || 'note-' + Date.now().toString(36);
     var path = currentPath || collection + '/' + dateInput.value + '-' + slug + '.md';
@@ -253,7 +253,7 @@
     };
     if (currentSha) details.sha = currentSha;
     setBusy(true);
-    message('正在保存到 GitHub…');
+    message('Saving…');
     try {
       var result = await request('/contents/' + safePath(path), { method: 'PUT', body: details });
       currentPath = path;
@@ -263,14 +263,14 @@
       slugInput.readOnly = true;
       dirty = false;
       publishedLink.href = originalMeta.permalink || '/research-diary/' + path.split('/').pop().replace(/\.md$/i, '') + '/';
-      publishedLink.textContent = '查看发布后的文章 ↗';
+      publishedLink.textContent = 'View post ↗';
       publishedLink.hidden = false;
-      message('已保存到 GitHub。网页通常会在片刻后更新。', 'success');
+      message('Saved.', 'success');
       try {
         await listPosts();
         select.value = currentPath;
       } catch (refreshError) {
-        message('文章已保存，但列表暂时无法刷新。重新连接后即可打开。', 'success');
+        message('Saved. Refresh to update the post list.', 'success');
       }
     } catch (error) {
       message(error.message, 'error');
@@ -290,24 +290,24 @@
   }
 
   function applyFormat(format) {
-    if (format === 'heading') insertText('## ', '', '小标题');
-    if (format === 'bold') insertText('**', '**', '加粗文字');
-    if (format === 'italic') insertText('*', '*', '斜体文字');
-    if (format === 'list') insertText('- ', '', '列表项');
-    if (format === 'link') insertText('[', '](https://)', '链接文字');
-    if (format === 'code') insertText('\n```\n', '\n```\n', '代码');
+    if (format === 'heading') insertText('## ', '', 'Heading');
+    if (format === 'bold') insertText('**', '**', 'Bold text');
+    if (format === 'italic') insertText('*', '*', 'Italic text');
+    if (format === 'list') insertText('- ', '', 'List item');
+    if (format === 'link') insertText('[', '](https://)', 'Link text');
+    if (format === 'code') insertText('\n```\n', '\n```\n', 'Code');
   }
 
   async function uploadImage(file) {
     if (!file) return;
-    if (!token) { message('上传图片前请先连接 GitHub。', 'error'); return; }
+    if (!token) { message('Connect GitHub first.', 'error'); return; }
     var extensions = { 'image/png': 'png', 'image/jpeg': 'jpg', 'image/webp': 'webp', 'image/gif': 'gif' };
     var extension = extensions[file.type];
-    if (!extension || file.size > 5 * 1024 * 1024) { message('请选择不超过 5 MB 的 PNG、JPEG、WebP 或 GIF 图片。', 'error'); return; }
+    if (!extension || file.size > 5 * 1024 * 1024) { message('Use a PNG, JPEG, WebP, or GIF under 5 MB.', 'error'); return; }
     var base = slugify(file.name.replace(/\.[^.]+$/, '')) || 'image';
     var imagePath = 'images/research-diary/' + Date.now().toString(36) + '-' + base + '.' + extension;
     setBusy(true);
-    message('正在上传图片…');
+    message('Uploading…');
     try {
       var bytes = new Uint8Array(await file.arrayBuffer());
       var binary = '';
@@ -316,7 +316,7 @@
         method: 'PUT', body: { message: 'diary: add image ' + base, content: btoa(binary), branch: branch }
       });
       insertText('![', '](/' + imagePath + ')', base);
-      message('图片已上传并插入正文。', 'success');
+      message('Image added.', 'success');
     } catch (error) {
       message(error.message, 'error');
     } finally {
@@ -334,16 +334,16 @@
     connectButton.hidden = false;
     disconnectButton.hidden = true;
     select.disabled = true;
-    connectionState.textContent = '未连接';
+    connectionState.textContent = 'Disconnected';
     connectionState.classList.remove('connected');
-    message('已断开。当前编辑内容仍保留在页面中。');
+    message('Disconnected.');
   });
   byId('new-post').addEventListener('click', function () {
-    if (!dirty || window.confirm('放弃当前尚未保存的修改？')) resetForm();
+    if (!dirty || window.confirm('Discard unsaved changes?')) resetForm();
   });
   select.addEventListener('change', function () {
     var selectedPath = select.value;
-    if (dirty && !window.confirm('放弃当前尚未保存的修改？')) { select.value = currentPath || ''; return; }
+    if (dirty && !window.confirm('Discard unsaved changes?')) { select.value = currentPath || ''; return; }
     openPost(selectedPath);
   });
   form.addEventListener('submit', save);

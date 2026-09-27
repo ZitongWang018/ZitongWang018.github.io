@@ -1,6 +1,5 @@
 .write-wrap { width: min(calc(100% - 48px), 1200px); margin: 0 auto; }
 .write-heading { display: flex; align-items: end; justify-content: space-between; gap: 20px; padding: 58px 0 28px; }
-.write-heading .eyebrow { margin: 0 0 7px; color: var(--muted); font-size: 11px; letter-spacing: .12em; }
 .write-heading h1 { margin: 0; font-size: 35px; line-height: 1.25; }
 .write-heading > a { padding-bottom: 5px; font-size: 14px; }
 
@@ -9,9 +8,9 @@
 .connection-title h2, .editor-topline h2 { margin: 0; font-size: 19px; }
 .connection-state { padding: 3px 9px; border: 1px solid var(--line); border-radius: 99px; color: var(--muted); font-size: 12px; }
 .connection-state.connected { color: #268653; border-color: #268653; }
-.connection-panel p { margin: 12px 0 17px; color: var(--muted); font-size: 14px; line-height: 1.65; }
+.connection-panel p { margin: 12px 0 0; color: var(--muted); font-size: 13px; line-height: 1.65; }
 .connection-panel code { font-size: .94em; }
-.connection-row { display: flex; gap: 10px; }
+.connection-row { display: flex; gap: 10px; margin-top: 17px; }
 .connection-row input { flex: 1; min-width: 0; padding: 10px 12px; border: 1px solid var(--line); border-radius: 7px; background: var(--background); color: var(--text); font: inherit; font-size: 14px; }
 .connection-row button, #new-post, #save-entry { padding: 9px 17px; border: 1px solid var(--text); border-radius: 7px; background: var(--text); color: var(--background); font: inherit; font-size: 14px; font-weight: 600; cursor: pointer; }
 .connection-row button:hover, #new-post:hover, #save-entry:hover { opacity: .8; }
@@ -20,8 +19,6 @@
 button:disabled { cursor: wait; opacity: .6; }
 .token-help { margin-top: 16px; color: var(--muted); font-size: 13px; }
 .token-help summary { width: fit-content; cursor: pointer; }
-.token-help ol { margin: 12px 0 0; padding-left: 22px; line-height: 1.9; }
-.token-help li { padding-left: 2px; }
 .token-help strong { color: var(--text); font-weight: 600; }
 
 .editor-panel { margin-top: 43px; }
@@ -54,8 +51,7 @@ button:disabled { cursor: wait; opacity: .6; }
 .preview-paper .post-meta { font-size: 12px; }
 .preview-paper .article-content { padding: 25px 0 0; font-size: 15px; }
 .preview-paper .article-content img { max-width: 100%; }
-.editor-bottom { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 25px 0 0; }
-.editor-bottom p { margin: 0; color: var(--muted); font-size: 13px; }
+.editor-bottom { display: flex; align-items: center; justify-content: flex-end; gap: 20px; padding: 25px 0 0; }
 #save-entry { padding: 11px 22px; white-space: nowrap; }
 .editor-status { min-height: 23px; margin: 17px 0 0; color: var(--muted); font-size: 14px; }
 .editor-status.error { color: #c85353; }
