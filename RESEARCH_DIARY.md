@@ -2,6 +2,12 @@
 
 日记公开在 `https://zitongwang018.github.io/research-diary/`。主页最底部的 `↗ field notes` 是入口。这个目录是公开网站的一部分，不适合存放未公开数据、密钥或私密内容。
 
+## 在网站内写作
+
+打开 `https://zitongwang018.github.io/research-diary/write/`（日记页底部也有 Write 入口）。第一次使用时，在 GitHub 创建一个仅授权 `ZitongWang018.github.io` 仓库、`Contents: Read and write` 权限的 fine-grained personal access token。将令牌贴进网页并连接，即可新建或打开文章、预览 Markdown、上传图片，并直接保存发布。令牌仅保存在当前网页的内存里，刷新后需重新输入。不要把令牌写进文章或发给他人。
+
+文章和上传的图片保存后立即进入公开仓库；GitHub Pages 通常需要片刻才会更新网页。离开前请确认保存成功。编辑器只预览常用 Markdown，最终排版以发布后的文章页为准。
+
 ## 新增一篇
 
 在 `_research_diary/` 下新建 Markdown 文件，例如 `2026-09-28-reading-notes.md`：
