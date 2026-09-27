@@ -11,7 +11,7 @@
   function updateLabel() {
     var mode = currentTheme();
     button.dataset.mode = mode;
-    button.setAttribute('aria-label', mode === 'dark' ? '切换到亮色主题' : '切换到暗色主题');
+    button.setAttribute('aria-label', mode === 'dark' ? 'Switch to light theme' : 'Switch to dark theme');
   }
 
   button.addEventListener('click', function () {
