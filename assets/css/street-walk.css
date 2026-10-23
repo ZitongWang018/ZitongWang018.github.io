@@ -1,0 +1,27 @@
+.street-walk { margin: 2.4rem 0 1.6rem; --street-ink: #334f80; }
+.street-walk .street-walk__caption { display: flex; align-items: center; justify-content: space-between; margin: 0 0 .55rem; font-size: .82rem; color: #65736e; letter-spacing: .03em; }
+.street-walk__tools { display: flex; gap: .65rem; align-items: center; }
+.street-walk button { font: inherit; cursor: pointer; }
+.street-walk .street-walk__tools button { border: 0; background: transparent; color: #65736e; padding: .2rem .3rem; font-size: .85rem; }
+.street-walk .street-walk__frame { position: relative; width: 100%; aspect-ratio: 2.67; min-height: 230px; overflow: hidden; border-block: 3px solid var(--street-ink); border-radius: 8px; isolation: isolate; background: #cbdce6; }
+.street-walk .street-walk__scene { width: 100%; height: 100%; display: block; overflow: hidden; touch-action: pan-y; user-select: none; -webkit-user-select: none; }
+.street-walk .street-walk__close { position: absolute; right: 9px; top: 9px; width: 31px; height: 31px; padding: 0; line-height: 1; border: 0; border-radius: 50%; font: 29px/29px Arial, sans-serif; color: #5d6861; background: #edf3f5b8; }
+.street-walk .street-walk__nav { position: absolute; top: 49%; border: 0; border-radius: 50%; width: 28px; height: 32px; padding: 0; color: #38547e; background: #ffffff85; opacity: 0; transition: opacity .2s; font: 27px/28px Arial, sans-serif; }
+.street-walk__nav--prev { left: 8px; }
+.street-walk__nav--next { right: 8px; }
+.street-walk__frame:hover .street-walk__nav, .street-walk__frame:focus-within .street-walk__nav { opacity: 1; }
+.street-walk .street-walk__hint { margin: .5rem 0 0; color: #7a837c; font-size: .7rem; text-align: center; }
+.street-walk__status { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+.street-walk .street-walk__reopen { padding: .6rem 1rem; background: #edf1e8; color: #58674f; border: 1px solid #d6decd; border-radius: 6px; font-size: .8rem; }
+.street-walk [hidden] { display: none !important; }
+.street-walk button:focus-visible { outline: 3px solid #b47b44; outline-offset: 3px; }
+.street-walk .sw-house { cursor: pointer; outline: none; }
+.street-walk .sw-house:hover .sw-plaque, .street-walk .sw-house:focus-visible .sw-plaque { fill: #b1814d; }
+.street-walk .sw-house:focus-visible .sw-focus { stroke: #fff3bd; stroke-width: 5px; }
+.street-walk .sw-house[aria-current="true"] .sw-doorknob { fill: #ffe09a; }
+.street-walk.is-expanded { position: fixed; inset: 0; z-index: 10000; margin: 0; padding: 30px 1.5vw; background: #202b36db; display: flex; flex-direction: column; justify-content: center; }
+.street-walk.is-expanded .street-walk__caption { color: #e8ede6; }
+.street-walk.is-expanded .street-walk__tools button, .street-walk.is-expanded .street-walk__hint { color: #e8ede6; }
+.street-walk.is-expanded .street-walk__frame { flex: 0 1 auto; max-height: 84vh; }
+@media (hover: none) { .street-walk .street-walk__nav { opacity: .75; } }
+@media (prefers-reduced-motion: reduce) { .street-walk * { transition: none !important; } }

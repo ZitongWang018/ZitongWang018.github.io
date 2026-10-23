@@ -1,0 +1,22 @@
+<link rel="stylesheet" href="{{ '/assets/css/street-walk.css' | relative_url }}">
+<section class="street-walk" aria-label="A little walk around the neighborhood">
+  <div class="street-walk__caption">
+    <span>A little walk</span>
+    <span class="street-walk__tools">
+      <button type="button" data-street-action="weather" aria-label="Switch to rainy weather" title="Change the weather">☂</button>
+      <button type="button" data-street-action="today" title="Walk home">Today</button>
+      <button type="button" data-street-action="expand" aria-label="Expand street view" aria-expanded="false" title="Expand">⤢</button>
+    </span>
+  </div>
+  <div class="street-walk__frame">
+    <svg class="street-walk__scene" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1932 724" role="group" aria-label="Click a numbered house to walk there. Use arrow keys to explore the street."></svg>
+    <button class="street-walk__close" type="button" data-street-action="close" aria-label="Close street view" title="Close">×</button>
+    <button class="street-walk__nav street-walk__nav--prev" type="button" data-street-action="prev" aria-label="Explore earlier houses">‹</button>
+    <button class="street-walk__nav street-walk__nav--next" type="button" data-street-action="next" aria-label="Explore later houses">›</button>
+  </div>
+  <p class="street-walk__hint">Click a house. Take the dog for a walk.</p>
+  <span class="street-walk__status" role="status" aria-live="polite"></span>
+  <button class="street-walk__reopen" type="button" data-street-action="open" hidden>Take a little walk →</button>
+  <noscript><p>Enable JavaScript to take the dog for a walk.</p></noscript>
+</section>
+<script src="{{ '/assets/js/street-walk.js' | relative_url }}" defer></script>
