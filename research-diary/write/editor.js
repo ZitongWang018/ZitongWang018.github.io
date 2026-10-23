@@ -12,7 +12,7 @@
   var draftKey = 'research-diary-rich-draft-v1';
   var byId = function (id) { return document.getElementById(id); };
   var titleInput = byId('entry-title'), categoryInput = byId('entry-category');
-  var select = byId('existing-posts'), tokenInput = byId('github-token');
+  var tokenInput = byId('github-token');
   var saveButton = byId('save-entry'), publishedLink = byId('published-link');
 
   function today() {
@@ -32,8 +32,6 @@
     byId('note-fields').disabled = value;
     byId('connect-button').disabled = value;
     byId('disconnect-button').disabled = value;
-    byId('new-post').disabled = value;
-    select.disabled = value || !token;
     Object.values(editors).forEach(function (editor) { editor.contentEditable = value ? 'false' : 'true'; });
   }
   function clean(html) {
@@ -96,8 +94,6 @@
   function format(editor, kind) {
     var range = currentRange(editor);
     restoreRange(editor, range);
-    if (kind === 'heading') document.execCommand('formatBlock', false, 'h2');
-    if (kind === 'paragraph') document.execCommand('formatBlock', false, 'p');
     if (kind === 'bold' || kind === 'italic') document.execCommand(kind, false);
     if (kind === 'list') document.execCommand('insertUnorderedList');
     if (kind === 'code') {
@@ -127,7 +123,7 @@
     var editor = document.createElement('div'); editor.className = 'rich-editor'; editor.id = 'body-' + key;
     editor.contentEditable = 'true'; editor.setAttribute('role', 'textbox'); editor.setAttribute('aria-multiline', 'true'); editor.setAttribute('aria-label', label);
     editor.dataset.placeholder = 'Start writing…'; editor.spellcheck = true;
-    [['paragraph', 'Text', 'Paragraph'], ['heading', 'H2', 'Heading'], ['bold', 'B', 'Bold'], ['italic', 'I', 'Italic'], ['list', '• List', 'List'], ['link', 'Link', 'Link'], ['code', 'Code', 'Code block'], ['image', 'Image', 'Image']].forEach(function (item) {
+    [['bold', 'B', 'Bold'], ['italic', 'I', 'Italic'], ['list', '• List', 'List'], ['link', 'Link', 'Link'], ['code', 'Code', 'Code block'], ['image', 'Image', 'Image']].forEach(function (item) {
       var button = document.createElement('button'); button.type = 'button'; button.dataset.format = item[0]; button.textContent = item[1]; button.title = item[2]; button.setAttribute('aria-label', item[2]);
       button.addEventListener('mousedown', function (event) { event.preventDefault(); });
       button.addEventListener('click', function () { format(editor, item[0]); }); toolbar.appendChild(button);
@@ -182,7 +178,6 @@
     }
     return data;
   }
-  function decodeBase64(value) { return new TextDecoder().decode(Uint8Array.from(atob(value.replace(/\s/g, '')), function (c) { return c.charCodeAt(0); })); }
   function encodeBase64(value) {
     var bytes = new TextEncoder().encode(value), binary = '';
     for (var i = 0; i < bytes.length; i += 8192) binary += String.fromCharCode.apply(null, bytes.subarray(i, i + 8192));
@@ -211,50 +206,20 @@
     body = body.replace(/\{/g, '&#123;').replace(/\}/g, '&#125;');
     return '---\n' + window.jsyaml.dump(meta, { lineWidth: -1, noRefs: true }).replace(/^date:.*$/m, 'date: ' + entryDate) + '---\n\n' + body + '\n';
   }
-  function resetForm() {
-    clearTimeout(draftTimer); currentPath = null; currentSha = null; originalMeta = {}; entryDate = today();
-    titleInput.value = ''; categoryInput.value = 'Day-Note'; lastDefaultTitle = '';
-    Object.values(editors).forEach(function (editor) { editor.innerHTML = ''; });
-    select.value = ''; dirty = false; publishedLink.hidden = true; message(''); updateMode(); rememberDraft();
-  }
-  async function listPosts(credential) {
+  async function checkRepository(credential) {
     var files = await request('/contents/' + collection + '?ref=' + branch, null, credential);
     if (!Array.isArray(files)) throw new Error('Could not load notes.');
-    select.replaceChildren(new Option('Open a note…', ''));
-    files.filter(function (file) { return file.type === 'file' && /\.md$/i.test(file.name); }).sort(function (a, b) { return b.name.localeCompare(a.name); }).forEach(function (file) { select.add(new Option(file.name.replace(/\.md$/i, ''), file.path)); });
-    select.value = currentPath || '';
   }
   async function connect() {
     var candidate = tokenInput.value.trim();
     if (!candidate || busy) { if (!busy) message('Enter a GitHub token.', 'error'); return; }
     setBusy(true); message('Connecting…');
     try {
-      await listPosts(candidate); token = candidate; tokenInput.value = ''; tokenInput.hidden = true;
+      await checkRepository(candidate); token = candidate; tokenInput.value = ''; tokenInput.hidden = true;
       byId('connect-button').hidden = true; byId('disconnect-button').hidden = false;
       byId('connection-state').textContent = 'Connected'; byId('connection-state').classList.add('connected');
       byId('github-panel').open = false; message('Connected.', 'success');
     } catch (error) { message(error.message, 'error'); } finally { setBusy(false); }
-  }
-  async function openPost(path) {
-    if (!path) { resetForm(); return; }
-    setBusy(true); message('Opening…');
-    try {
-      var file = await request('/contents/' + safePath(path) + '?ref=' + branch);
-      if (file.encoding !== 'base64' || !file.content) throw new Error('Note is too large to edit here.');
-      var parsed = parseFile(decodeBase64(file.content));
-      var temp = document.createElement('div');
-      temp.innerHTML = clean(parsed.meta.note_format === 'rich-v1' ? parsed.body : window.marked.parse(parsed.body, { gfm: true, breaks: true }));
-      var day = parsed.meta.note_format === 'rich-v1' && parsed.meta.category === 'Day-Note';
-      if (day && !groups.every(function (group) { return group.fields.every(function (field) { return temp.querySelector('[data-diary-field="' + field[0] + '"]'); }); })) throw new Error('This Day-Note is missing sections; the current draft was not replaced.');
-      currentPath = path; currentSha = file.sha; originalMeta = parsed.meta;
-      entryDate = parsed.meta.date instanceof Date ? parsed.meta.date.toISOString().slice(0, 10) : String(parsed.meta.date || today()).slice(0, 10);
-      titleInput.value = parsed.meta.title || ''; categoryInput.value = day ? 'Day-Note' : 'Week-Note';
-      Object.keys(editors).forEach(function (key) {
-        var source = day && temp.querySelector('[data-diary-field="' + key + '"]');
-        editors[key].innerHTML = day ? (source ? clean(source.innerHTML) : '') : (key === 'week' ? clean((temp.querySelector('.diary-week') || temp).innerHTML) : '');
-      });
-      lastDefaultTitle = defaultTitle(); updateMode(); dirty = false; publishedLink.hidden = true; rememberDraft(); message('Opened.', 'success');
-    } catch (error) { select.value = currentPath || ''; message(error.message, 'error'); } finally { setBusy(false); }
   }
   async function save(event) {
     event.preventDefault(); if (busy) return;
@@ -273,7 +238,6 @@
       publishedLink.href = typeof permalink === 'string' && /^\/research-diary\//.test(permalink) ? permalink : '/research-diary/';
       publishedLink.textContent = 'View note ↗'; publishedLink.hidden = false;
       message('Saved. The published page will update shortly.', 'success');
-      try { await listPosts(); } catch (error) { message('Saved. Reconnect to refresh the note list.', 'success'); }
     } catch (error) { message(error.message, 'error'); } finally { setBusy(false); }
   }
   async function uploadImage(file) {
@@ -297,7 +261,7 @@
   createEditors(); updateMode();
   try {
     var draft = JSON.parse(localStorage.getItem(draftKey) || 'null');
-    if (draft && draft.bodies && (draft.dirty || draft.path)) {
+    if (draft && draft.bodies && (draft.dirty || (draft.path && draft.date === today()))) {
       titleInput.value = draft.title || ''; categoryInput.value = draft.category === 'Week-Note' ? 'Week-Note' : 'Day-Note'; entryDate = draft.date || today();
       currentPath = draft.path || null; currentSha = draft.sha || null; originalMeta = draft.meta || {};
       Object.keys(editors).forEach(function (key) { editors[key].innerHTML = clean(draft.bodies[key] || ''); });
@@ -311,12 +275,7 @@
   tokenInput.addEventListener('keydown', function (event) { if (event.key === 'Enter') { event.preventDefault(); connect(); } });
   byId('disconnect-button').addEventListener('click', function () {
     token = null; tokenInput.hidden = false; byId('connect-button').hidden = false; byId('disconnect-button').hidden = true;
-    select.disabled = true; byId('connection-state').textContent = 'Disconnected'; byId('connection-state').classList.remove('connected'); message('Disconnected.');
-  });
-  byId('new-post').addEventListener('click', function () { if (!dirty || window.confirm('Discard this local draft and start a new note?')) resetForm(); });
-  select.addEventListener('change', function () {
-    if (dirty && !window.confirm('Discard this local draft and open another note?')) { select.value = currentPath || ''; return; }
-    openPost(select.value);
+    byId('connection-state').textContent = 'Disconnected'; byId('connection-state').classList.remove('connected'); message('Disconnected.');
   });
   byId('entry-form').addEventListener('submit', save);
   byId('image-file').addEventListener('change', function () { uploadImage(byId('image-file').files[0]); });

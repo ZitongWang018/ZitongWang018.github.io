@@ -1,17 +1,13 @@
 .write-wrap { width: min(calc(100% - 64px), 1280px); margin: 0 auto; }
 .write-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 20px; padding: 42px 0 24px; }
 .write-heading h1 { margin: 0; font-size: 32px; letter-spacing: -.04em; }
-.write-heading > a { font-size: 13px; color: var(--muted); }
 .workspace-controls { display: flex; justify-content: space-between; align-items: start; gap: 24px; padding-bottom: 22px; border-bottom: 1px solid var(--line); }
 .connection-panel { max-width: 520px; flex: 1; font-size: 13px; }
 .connection-panel summary { cursor: pointer; width: fit-content; padding: 7px 0; }
 .connection-state { margin-left: 8px; color: var(--muted); font-size: 12px; }
 .connection-state.connected { color: var(--link); }
-.connection-panel p { color: var(--muted); font-size: 12px; }
 .connection-row { display: flex; gap: 8px; margin-top: 12px; }
 .connection-row input { flex: 1; min-width: 0; }
-.existing-control { display: flex; align-items: center; gap: 8px; }
-.existing-control select { max-width: 260px; }
 .write-wrap input, .write-wrap select { min-height: 40px; padding: 8px 12px; border: 1px solid var(--line); border-radius: 7px; background: var(--background); color: var(--text); font: inherit; font-size: 14px; }
 .write-wrap button { border: 1px solid var(--line); border-radius: 7px; padding: 8px 14px; background: var(--background); color: var(--text); font: inherit; font-size: 13px; cursor: pointer; }
 .write-wrap button:hover { background: var(--surface); }
@@ -59,8 +55,7 @@ select:focus-visible, .write-wrap summary:focus-visible { outline: 2px solid var
   .write-wrap { width: calc(100% - 32px); }
   .write-heading { padding-top: 24px; }
   .workspace-controls { flex-direction: column; gap: 12px; }
-  .connection-panel, .existing-control { width: 100%; }
-  .existing-control select { flex: 1; max-width: none; min-width: 0; }
+  .connection-panel { width: 100%; }
   .entry-fields { grid-template-columns: minmax(0, 1fr); gap: 14px; }
   .diary-grid { grid-template-columns: minmax(0, 1fr); gap: 16px; }
   .rich-editor { min-height: 190px; }

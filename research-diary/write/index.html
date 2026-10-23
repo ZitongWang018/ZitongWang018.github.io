@@ -20,14 +20,12 @@ title: Write
 <body>
   {% include research-header.html %}
   <main class="write-wrap">
-    <div class="write-heading"><h1>Writing</h1><a href="/research-diary/">Back to notes ↗</a></div>
+    <div class="write-heading"><h1>Writing</h1></div>
     <div class="workspace-controls">
       <details id="github-panel" class="connection-panel">
         <summary>GitHub <span id="connection-state" class="connection-state">Disconnected</span></summary>
         <div class="connection-row"><label class="visually-hidden" for="github-token">GitHub token</label><input id="github-token" type="password" placeholder="GitHub token" autocomplete="off" spellcheck="false"><button id="connect-button" type="button">Connect</button><button id="disconnect-button" type="button" hidden>Disconnect</button></div>
-        <p><a href="https://github.com/settings/personal-access-tokens/new?name=Research-Diary-Writer&amp;target_name=ZitongWang018&amp;contents=write&amp;expires_in=90" target="_blank" rel="noopener noreferrer">Get a token ↗</a> · Contents: Read and write. The token stays in this tab.</p>
       </details>
-      <div class="existing-control"><label class="visually-hidden" for="existing-posts">Open a note</label><select id="existing-posts" disabled><option value="">Open a note…</option></select><button id="new-post" type="button">New</button></div>
     </div>
     <form id="entry-form" novalidate>
       <fieldset id="note-fields">
