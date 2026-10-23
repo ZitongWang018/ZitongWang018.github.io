@@ -12,6 +12,9 @@
     var mode = currentTheme();
     button.dataset.mode = mode;
     button.setAttribute('aria-label', mode === 'dark' ? 'Switch to light theme' : 'Switch to dark theme');
+    button.title = mode === 'dark' ? 'Switch to light theme' : 'Switch to dark theme';
+    var label = button.querySelector('.theme-label');
+    if (label) label.textContent = mode === 'dark' ? 'Night' : 'Day';
   }
 
   button.addEventListener('click', function () {

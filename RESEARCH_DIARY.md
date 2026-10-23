@@ -1,31 +1,22 @@
-# 研究日记使用说明
+# 研究日记
 
-日记公开在 `https://zitongwang018.github.io/research-diary/`。主页最底部的 `↗ field notes` 是入口。这个目录是公开网站的一部分，不适合存放未公开数据、密钥或私密内容。
+写作入口：https://zitongwang018.github.io/research-diary/write/
 
-## 在网站内写作
+- Category 选择 `Day-Note` 或 `Week-Note`。
+- 新笔记标题默认为北京时间当天日期 + `DayNote` / `WeekNote`，可手动修改。
+- Day-Note 包含 Project、Learning、New 三个模块，每个模块两个直接编辑的内容框；手机上纵向排列。
+- Week-Note 使用一个完整的直接编辑内容框。
+- 用工具栏设置标题、加粗、斜体、列表、链接、代码和图片。粘贴 Markdown 时会直接渲染，不设置独立预览栏。
+- 日夜主题跟随系统，也可点击页眉 Day / Night 切换；浏览器记住选择。
+- 草稿保存在当前浏览器。切换类别时，两种模式的内容各自保留，Save 只发布当前类别。
+- 点击 New 开始新笔记，Open 下拉框用于重新打开已发布笔记。
 
-打开 `https://zitongwang018.github.io/research-diary/write/`（日记页底部也有 Write 入口）。第一次使用时，在 GitHub 创建一个仅授权 `ZitongWang018.github.io` 仓库、`Contents: Read and write` 权限的 fine-grained personal access token。将令牌贴进网页并连接，即可新建或打开文章、预览 Markdown、上传图片，并直接保存发布。令牌仅保存在当前网页的内存里，刷新后需重新输入。不要把令牌写进文章或发给他人。
+## 保存
 
-文章和上传的图片保存后立即进入公开仓库；GitHub Pages 通常需要片刻才会更新网页。离开前请确认保存成功。编辑器只预览常用 Markdown，最终排版以发布后的文章页为准。
+展开 GitHub，使用仅授权此仓库且具有 Contents: Read and write 权限的 fine-grained token 连接。令牌只保存在当前标签页内存中，不写入草稿。Save 将当前笔记发布到公开仓库，GitHub Pages 随后更新网页。
 
-## 新增一篇
+同一天每个类别使用一个文件；已有同日同类笔记时，请从 Open 打开再修改。并发保存冲突会保留草稿，不覆盖远端内容。
 
-在 `_research_diary/` 下新建 Markdown 文件，例如 `2026-09-28-reading-notes.md`：
+## 文件格式
 
-```markdown
----
-layout: research-note
-title: "今天的标题"
-date: 2026-09-28
-category: 阅读
-summary: "一句话摘要，可省略。"
-tags: [LLM, 阅读]
-reading_time: 3
----
-
-这里写正文。支持 Markdown 标题、列表、链接、图片和代码块。
-```
-
-提交并推送后，GitHub Pages 会自动生成文章页，首页按日期从新到旧展示标题、摘要和日期，`/research-diary/archive/` 按年份归档。`category` 和 `tags` 用于 Tags 页面，`reading_time` 用于显示预计阅读分钟数，三者均可省略。文件名中的英文短名会成为文章网址的一部分。
-
-日记的外观由 `research-diary/style.css`、`research-diary/theme.js`、`_layouts/research-note.html` 和 `_includes/research-*.html` 控制，不依赖个人主页的主题。亮暗主题默认跟随系统，也可用右上角按钮切换；手动选择会保存在当前浏览器。
+笔记保存在 `_research_diary/`，含 layout、title、date、category、note_format 和 permalink。正文是净化后的 HTML，保留直接编辑的排版。Day-Note 使用固定的六个 `data-diary-field` 标记，便于再次打开时还原到对应内容框。旧 Markdown 格式可作为单框内容打开。

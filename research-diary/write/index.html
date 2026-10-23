@@ -11,7 +11,7 @@ title: Write
   <meta name="color-scheme" content="light dark">
   <meta name="robots" content="noindex,nofollow">
   <meta name="referrer" content="no-referrer">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data: blob:; connect-src https://api.github.com; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data: blob: https:; connect-src https://api.github.com; object-src 'none'; base-uri 'none'; form-action 'none'">
   <title>Writing · Zitong's Notes</title>
   <script src="/research-diary/theme-init.js"></script>
   <link rel="stylesheet" href="/research-diary/style.css">
@@ -20,47 +20,30 @@ title: Write
 <body>
   {% include research-header.html %}
   <main class="write-wrap">
-    <div class="write-heading"><h1>Writing</h1><a href="/research-diary/">Back to posts ↗</a></div>
-
-    <section class="connection-panel" aria-labelledby="connection-heading">
-      <div class="connection-title"><h2 id="connection-heading">GitHub</h2><span id="connection-state" class="connection-state">Disconnected</span></div>
-      <div class="connection-row"><label class="visually-hidden" for="github-token">GitHub token</label><input id="github-token" type="password" placeholder="GitHub token" autocomplete="off" spellcheck="false"><button id="connect-button" type="button">Connect</button><button id="disconnect-button" type="button" hidden>Disconnect</button></div>
-      <details class="token-help"><summary>Get a token</summary><p><a href="https://github.com/settings/personal-access-tokens/new?name=Research-Diary-Writer&amp;target_name=ZitongWang018&amp;contents=write&amp;expires_in=90" target="_blank" rel="noopener noreferrer">Create a fine-grained token ↗</a> for <code>ZitongWang018.github.io</code> with <strong>Contents: Read and write</strong>. The token stays in this tab.</p></details>
-    </section>
-
-    <section class="editor-panel" aria-labelledby="editor-heading">
-      <div class="editor-topline"><h2 id="editor-heading">Post</h2><div class="existing-control"><label for="existing-posts">Open</label><select id="existing-posts" disabled><option value="">New post</option></select><button id="new-post" type="button">New</button></div></div>
-      <form id="entry-form" novalidate>
+    <div class="write-heading"><h1>Writing</h1><a href="/research-diary/">Back to notes ↗</a></div>
+    <div class="workspace-controls">
+      <details id="github-panel" class="connection-panel">
+        <summary>GitHub <span id="connection-state" class="connection-state">Disconnected</span></summary>
+        <div class="connection-row"><label class="visually-hidden" for="github-token">GitHub token</label><input id="github-token" type="password" placeholder="GitHub token" autocomplete="off" spellcheck="false"><button id="connect-button" type="button">Connect</button><button id="disconnect-button" type="button" hidden>Disconnect</button></div>
+        <p><a href="https://github.com/settings/personal-access-tokens/new?name=Research-Diary-Writer&amp;target_name=ZitongWang018&amp;contents=write&amp;expires_in=90" target="_blank" rel="noopener noreferrer">Get a token ↗</a> · Contents: Read and write. The token stays in this tab.</p>
+      </details>
+      <div class="existing-control"><label class="visually-hidden" for="existing-posts">Open a note</label><select id="existing-posts" disabled><option value="">Open a note…</option></select><button id="new-post" type="button">New</button></div>
+    </div>
+    <form id="entry-form" novalidate>
+      <fieldset id="note-fields">
+        <legend class="visually-hidden">Note</legend>
         <div class="entry-fields">
-          <label class="field field-title">Title<input id="entry-title" type="text" maxlength="160" required></label>
-          <label class="field">Date<input id="entry-date" type="date" required></label>
-          <label class="field">Slug<input id="entry-slug" type="text" maxlength="80" spellcheck="false"></label>
-          <label class="field field-wide">Summary<input id="entry-summary" type="text" maxlength="320"></label>
-          <label class="field">Category<input id="entry-category" type="text" maxlength="60"></label>
-          <label class="field">Tags<input id="entry-tags" type="text" placeholder="LLM, agents"></label>
-          <label class="field">Reading time <small>min</small><input id="entry-reading-time" type="number" min="1" max="999" step="1"></label>
+          <label class="field field-title" for="entry-title">Title<input id="entry-title" type="text" maxlength="160" required></label>
+          <label class="field" for="entry-category">Category<select id="entry-category"><option value="Day-Note">Day-Note</option><option value="Week-Note">Week-Note</option></select></label>
         </div>
-
-        <div class="writing-columns">
-          <div class="writing-column">
-            <div class="column-heading"><h3>Markdown</h3><button id="upload-image" class="text-button" type="button">Image</button><input id="image-file" type="file" accept="image/png,image/jpeg,image/webp,image/gif" hidden></div>
-            <div class="format-toolbar" role="toolbar" aria-label="Formatting">
-              <button type="button" data-format="heading" title="Heading">H2</button>
-              <button type="button" data-format="bold" title="Bold"><strong>B</strong></button>
-              <button type="button" data-format="italic" title="Italic"><em>I</em></button>
-              <button type="button" data-format="list" title="List">• List</button>
-              <button type="button" data-format="link" title="Link">Link</button>
-              <button type="button" data-format="code" title="Code block">Code</button>
-            </div>
-            <label class="visually-hidden" for="entry-body">Post body</label><textarea id="entry-body" rows="24" placeholder="Start writing…" spellcheck="true"></textarea>
-          </div>
-          <div class="writing-column preview-column"><div class="column-heading"><h3>Preview</h3></div><article class="preview-paper"><h2 id="preview-title">Untitled</h2><p id="preview-meta" class="post-meta"></p><div id="preview-body" class="article-content"></div></article></div>
-        </div>
-        <div class="editor-bottom"><button id="save-entry" type="submit">Save</button></div>
-      </form>
-      <p id="editor-status" class="editor-status" role="status" aria-live="polite"></p>
-      <a id="published-link" class="published-link" hidden></a>
-    </section>
+        <div id="day-editors"></div>
+        <div id="week-editor" hidden></div>
+      </fieldset>
+      <div class="editor-bottom"><span id="draft-state" class="draft-state" role="status"></span><button id="save-entry" type="submit">Save</button></div>
+    </form>
+    <p id="editor-status" class="editor-status" role="status" aria-live="polite"></p>
+    <a id="published-link" class="published-link" hidden></a>
+    <input id="image-file" type="file" accept="image/png,image/jpeg,image/webp,image/gif" hidden>
   </main>
   {% include research-footer.html %}
   <script src="/research-diary/vendor/marked.umd.js" defer></script>

@@ -39,13 +39,13 @@ title: Research Diary
           <article class="post-card">
             <h2><a href="{{ note.url | relative_url }}">{{ note.title | escape }}</a></h2>
             <p class="post-summary">{{ description | escape }}</p>
-            <p class="post-meta">Date: <time datetime="{{ note.date | date: '%Y-%m-%d' }}">{{ note.date | date: '%B %-d, %Y' }}</time>{% if note.reading_time %} <span aria-hidden="true">|</span> Estimated Reading Time: {{ note.reading_time }} min{% endif %} <span aria-hidden="true">|</span> Author: Zitong Wang{% if note.category %} <span aria-hidden="true">|</span> {{ note.category | escape }}{% endif %}</p>
+            <p class="post-meta"><time datetime="{{ note.date | date: '%Y-%m-%d' }}">{{ note.date | date: '%Y-%m-%d' }}</time>{% if note.category %} <span aria-hidden="true">·</span> {{ note.category | escape }}{% endif %}</p>
           </article>
         </li>
         {% endfor %}
       </ol>
       {% else %}
-      <div class="empty-card">No posts yet.</div>
+      <div class="empty-card"><span>No notes yet.</span><a href="/research-diary/write/">Write your first note ↗</a></div>
       {% endif %}
     </section>
   </main>
