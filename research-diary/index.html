@@ -34,11 +34,11 @@ title: Research Diary
       {% if notes.size > 0 %}
       <ol class="post-list">
         {% for note in notes %}
-        {% assign description = note.summary | default: note.excerpt | strip_html | strip_newlines | truncate: 180 %}
+        {% capture description %}{% include research-excerpt.html note=note %}{% endcapture %}
         <li class="post-item">
           <article class="post-card">
             <h2><a href="{{ note.url | relative_url }}">{{ note.title | escape }}</a></h2>
-            <p class="post-summary">{{ description | escape }}</p>
+            {% assign description = description | strip %}{% if description != '' %}<p class="post-summary">{{ description | escape_once }}</p>{% endif %}
             <p class="post-meta"><time datetime="{{ note.date | date: '%Y-%m-%d' }}">{{ note.date | date: '%Y-%m-%d' }}</time>{% if note.category %} <span aria-hidden="true">·</span> {{ note.category | escape }}{% endif %}</p>
           </article>
         </li>

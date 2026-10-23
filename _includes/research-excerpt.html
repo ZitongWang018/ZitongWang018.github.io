@@ -1,0 +1,22 @@
+{%- comment -%}Read only the six editable bodies; omit the structural Day-Note headings.{%- endcomment -%}
+{%- capture excerpt_source -%}
+  {%- if include.note.summary and include.note.summary != '' -%}
+    {{- include.note.summary -}}
+  {%- elsif include.note.note_format == 'rich-v1' and include.note.category == 'Day-Note' -%}
+    {%- assign excerpt_fields = include.note.content | split: '<div data-diary-field="' -%}
+    {%- assign excerpt_has_text = false -%}
+    {%- for excerpt_field in excerpt_fields offset:1 -%}
+      {%- assign excerpt_html = excerpt_field | split: '</div></section>' | first -%}
+      {%- assign excerpt_prefix = excerpt_html | split: '">' | first | append: '">' -%}
+      {%- assign excerpt_text = excerpt_html | remove_first: excerpt_prefix | replace: '</p>', ' ' | replace: '</div>', ' ' | replace: '</li>', ' ' | replace: '</h2>', ' ' | replace: '</h3>', ' ' | replace: '</pre>', ' ' | replace: '<br>', ' ' | replace: '<br/>', ' ' | replace: '<br />', ' ' | strip_html | replace: '&nbsp;', ' ' | replace: '&#160;', ' ' | normalize_whitespace | strip -%}
+      {%- if excerpt_text != '' -%}
+        {%- if excerpt_has_text %} · {% endif -%}
+        {{- excerpt_text -}}
+        {%- assign excerpt_has_text = true -%}
+      {%- endif -%}
+    {%- endfor -%}
+  {%- else -%}
+    {{- include.note.content | markdownify -}}
+  {%- endif -%}
+{%- endcapture -%}
+{{- excerpt_source | replace: '</p>', ' ' | replace: '</div>', ' ' | replace: '</li>', ' ' | replace: '</h2>', ' ' | replace: '</h3>', ' ' | replace: '</pre>', ' ' | replace: '<br>', ' ' | replace: '<br/>', ' ' | replace: '<br />', ' ' | strip_html | replace: '&nbsp;', ' ' | replace: '&#160;', ' ' | normalize_whitespace | strip | truncate: 180 -}}
