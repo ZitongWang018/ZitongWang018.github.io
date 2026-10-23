@@ -1,0 +1,80 @@
+/* Shared site chrome; the navigation stays black in both appearances. */
+:root { color-scheme: light; }
+.masthead { background: #000; border-bottom-color: #252525; }
+.masthead__inner-wrap { gap: 1rem; }
+.masthead__menu { flex: 1; min-width: 0; overflow-x: auto; scrollbar-width: thin; scrollbar-color: #777 #000; }
+.masthead__menu .greedy-nav { min-width: 0; }
+.masthead .theme-toggle { display: inline-flex; flex: 0 0 38px; align-items: center; justify-content: center; width: 38px; height: 38px; padding: 0; margin: 0; border: 1px solid #616161; border-radius: 50%; background: transparent; color: #fff; cursor: pointer; }
+.masthead .theme-toggle[hidden] { display: none; }
+.masthead .theme-toggle:hover { background: #292929; }
+.masthead .theme-toggle:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
+.theme-toggle__sun { display: none; }
+html[data-theme="dark"] .theme-toggle__moon { display: none; }
+html[data-theme="dark"] .theme-toggle__sun { display: block; }
+
+/* Dark surfaces and readable text, including the publication list and menus. */
+html[data-theme="dark"] { color-scheme: dark; background: #151719; }
+html[data-theme="dark"] body { background: #151719; color: #dedfe1; }
+html[data-theme="dark"] a { color: #82c5d7; }
+html[data-theme="dark"] a:hover { color: #b4e3ef; }
+html[data-theme="dark"] .masthead a { color: #fff; }
+html[data-theme="dark"] .masthead a:hover { color: #d0d0d0; }
+html[data-theme="dark"] h1,
+html[data-theme="dark"] h2,
+html[data-theme="dark"] h3,
+html[data-theme="dark"] h4,
+html[data-theme="dark"] h5,
+html[data-theme="dark"] h6,
+html[data-theme="dark"] .author__name,
+html[data-theme="dark"] .author__urls a { color: #ededef; }
+html[data-theme="dark"] .page__content h2,
+html[data-theme="dark"] hr,
+html[data-theme="dark"] .page__share,
+html[data-theme="dark"] .page__related,
+html[data-theme="dark"] .pagination,
+html[data-theme="dark"] .author__avatar img { border-color: #3c4045; }
+html[data-theme="dark"] .pub-card__authors { color: #dedfe1; }
+html[data-theme="dark"] .pub-card__authors-note,
+html[data-theme="dark"] .pub-card__venue,
+html[data-theme="dark"] .page__meta,
+html[data-theme="dark"] .page__date { color: #b0b6be; }
+html[data-theme="dark"] .pub-card__thumb-frame { border-color: #44484f; }
+html[data-theme="dark"] .pub-card__thumb-placeholder { background: linear-gradient(145deg, #30343a, #22262c); }
+html[data-theme="dark"] a.pub-card__btn { background: #24282d; color: #e4e7eb !important; border-color: #535a64; }
+html[data-theme="dark"] a.pub-card__btn:hover { background: #343a42; border-color: #9ba3ad; }
+html[data-theme="dark"] .page__footer { background: #1e2125; border-color: #3c4045; color: #b0b6be; }
+html[data-theme="dark"] .page__footer a,
+html[data-theme="dark"] .page__footer .fas,
+html[data-theme="dark"] .page__footer .fab { color: #b0b6be; }
+html[data-theme="dark"] .author__urls { background: #24282d; border-color: #44484f; }
+html[data-theme="dark"] .author__urls:after { border-bottom-color: #24282d; }
+html[data-theme="dark"] .social-icons .fa-github,
+html[data-theme="dark"] .social-icons .fa-github-alt,
+html[data-theme="dark"] .social-icons .fa-github-square { color: #dedfe1; }
+html[data-theme="dark"] pre,
+html[data-theme="dark"] code,
+html[data-theme="dark"] .highlight { background: #22262c; color: #e1e5eb; }
+html[data-theme="dark"] th,
+html[data-theme="dark"] td { border-color: #44484f; }
+html[data-theme="dark"] tbody tr:nth-child(odd) { background: #1e2125; }
+html[data-theme="dark"] input,
+html[data-theme="dark"] textarea,
+html[data-theme="dark"] select { background: #24282d; color: #ededef; border-color: #535a64; }
+html[data-theme="dark"] .notice,
+html[data-theme="dark"] .notice--info { background: #222e37; color: #dedfe1; }
+html[data-theme="dark"] .street-walk__caption,
+html[data-theme="dark"] .street-walk__tools button,
+html[data-theme="dark"] .street-walk__hint { color: #b5bfb4; }
+html[data-theme="dark"] .street-walk__reopen { background: #293127; color: #d0ddc9; border-color: #55624e; }
+@media (min-width: 1100px) {
+  html[data-theme="dark"] .author__urls { background: transparent; }
+}
+@media (max-width: 600px) {
+  .masthead__inner-wrap { gap: .6rem; }
+  .greedy-nav .visible-links a { margin-inline: .65rem; font-size: 1rem; }
+  .masthead__menu-item--lg { padding-right: .6rem; }
+}
+@media print {
+  html[data-theme="dark"], html[data-theme="dark"] body { background: #fff; color: #000; }
+  .theme-toggle { display: none !important; }
+}
