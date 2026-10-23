@@ -1,13 +1,15 @@
-/* Shared site chrome; the navigation stays black in both appearances. */
+/* Pale gray navigation by day, black navigation by night. */
 :root { color-scheme: light; }
-.masthead { background: #000; border-bottom-color: #252525; }
+.masthead { background: #f5f5f5; border-bottom-color: #e7e7e7; }
+.masthead a { color: #202124; }
+.masthead a:hover { color: #575b60; }
 .masthead__inner-wrap { gap: 1rem; }
-.masthead__menu { flex: 1; min-width: 0; overflow-x: auto; scrollbar-width: thin; scrollbar-color: #777 #000; }
+.masthead__menu { flex: 1; min-width: 0; overflow-x: auto; scrollbar-width: thin; scrollbar-color: #bcbcbc transparent; }
 .masthead__menu .greedy-nav { min-width: 0; }
-.masthead .theme-toggle { display: inline-flex; flex: 0 0 38px; align-items: center; justify-content: center; width: 38px; height: 38px; padding: 0; margin: 0; border: 1px solid #616161; border-radius: 50%; background: transparent; color: #fff; cursor: pointer; }
+.masthead .theme-toggle { display: inline-flex; flex: 0 0 38px; align-items: center; justify-content: center; width: 38px; height: 38px; padding: 0; margin: 0; border: 1px solid #c9c9c9; border-radius: 50%; background: transparent; color: #202124; cursor: pointer; }
 .masthead .theme-toggle[hidden] { display: none; }
-.masthead .theme-toggle:hover { background: #292929; }
-.masthead .theme-toggle:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
+.masthead .theme-toggle:hover { background: #e8e8e8; }
+.masthead .theme-toggle:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
 .theme-toggle__sun { display: none; }
 html[data-theme="dark"] .theme-toggle__moon { display: none; }
 html[data-theme="dark"] .theme-toggle__sun { display: block; }
@@ -15,6 +17,9 @@ html[data-theme="dark"] .theme-toggle__sun { display: block; }
 /* Dark surfaces and readable text, including the publication list and menus. */
 html[data-theme="dark"] { color-scheme: dark; background: #151719; }
 html[data-theme="dark"] body { background: #151719; color: #dedfe1; }
+html[data-theme="dark"] .masthead { background: #000; border-bottom-color: #252525; }
+html[data-theme="dark"] .masthead .theme-toggle { color: #fff; border-color: #616161; }
+html[data-theme="dark"] .masthead .theme-toggle:hover { background: #292929; }
 html[data-theme="dark"] a { color: #82c5d7; }
 html[data-theme="dark"] a:hover { color: #b4e3ef; }
 html[data-theme="dark"] .masthead a { color: #fff; }
