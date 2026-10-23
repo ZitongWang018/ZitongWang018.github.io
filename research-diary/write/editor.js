@@ -123,7 +123,7 @@
     var editor = document.createElement('div'); editor.className = 'rich-editor'; editor.id = 'body-' + key;
     editor.contentEditable = 'true'; editor.setAttribute('role', 'textbox'); editor.setAttribute('aria-multiline', 'true'); editor.setAttribute('aria-label', label);
     editor.dataset.placeholder = 'Start writing…'; editor.spellcheck = true;
-    [['bold', 'B', 'Bold'], ['italic', 'I', 'Italic'], ['list', '• List', 'List'], ['link', 'Link', 'Link'], ['code', 'Code', 'Code block'], ['image', 'Image', 'Image']].forEach(function (item) {
+    [['bold', 'B', 'Bold'], ['italic', 'I', 'Italic'], ['list', '• List', 'List'], ['code', 'Code', 'Code block']].forEach(function (item) {
       var button = document.createElement('button'); button.type = 'button'; button.dataset.format = item[0]; button.textContent = item[1]; button.title = item[2]; button.setAttribute('aria-label', item[2]);
       button.addEventListener('mousedown', function (event) { event.preventDefault(); });
       button.addEventListener('click', function () { format(editor, item[0]); }); toolbar.appendChild(button);
